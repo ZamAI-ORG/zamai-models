@@ -1,0 +1,58 @@
+{
+  "tasal9/ZamAI-Mistral-7B-Pashto": [
+    {
+      "status": "error",
+      "error": "Not Found"
+    },
+    {
+      "status": "error",
+      "error": "Not Found"
+    },
+    {
+      "status": "error",
+      "error": "Not Found"
+    }
+  ],
+  "tasal9/ZamAI-LIama3-Pashto": [
+    {
+      "status": "error",
+      "error": "Not Found"
+    },
+    {
+      "status": "error",
+      "error": "Not Found"
+    },
+    {
+      "status": "error",
+      "error": "Not Found"
+    }
+  ],
+  "tasal9/pashto-base-bloom": [
+    {
+      "status": "error",
+      "error": "Not Found"
+    },
+    {
+      "status": "error",
+      "error": "Not Found"
+    },
+    {
+      "status": "error",
+      "error": "Not Found"
+    }
+  ],
+  "tasal9/Multilingual-ZamAI-Embeddings": [
+    {
+      "status": "error",
+      "error": "Not Found"
+    },
+    {
+      "status": "error",
+      "error": "Not Found"
+    },
+    {
+      "status": "error",
+      "error": "Not Found"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "dataset_name": "tasal9/ZamAI_Pashto_Dataset",
+  "files_explored": {
+    "pashto_train_instruction.jsonl": {
+      "format": "jsonl",
+      "sample_count": 5,
+      "keys": [
+        "instruction",
+        "input",
+        "output"
+      ]
+    },
+    "pashto_val_instruction.jsonl": {
+      "format": "jsonl",
+      "sample_count": 5,
+      "keys": [
+        "instruction",
+        "input",
+        "output"
+      ]
+    },
+    "pashto_cleaned_train.csv": {
+      "format": "csv",
+      "shape": [
+        25785,
+        8
+      ],
+      "columns": [
+        "title",
+        "text",
+        "source_file",
+        "prompt",
+        "completion",
+        "instruction",
+        "input",
+        "output"
+      ]
+    },
+    "dataset_info.txt": {
+      "format": "text",
+      "length": 408
+    }
+  },
+  "recommended_format": "instruction_jsonl",
+  "training_files": {
+    "train": "pashto_train_instruction.jsonl",
+    "validation": "pashto_val_instruction.jsonl"
+  }
+}

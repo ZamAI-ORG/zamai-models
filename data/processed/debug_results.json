@@ -1,0 +1,169 @@
+{
+  "tasal9/pashto-base-bloom": {
+    "status": {
+      "exists": true,
+      "pipeline_tag": "text-generation",
+      "library": "transformers",
+      "private": false,
+      "gated": false,
+      "tags": [
+        "transformers",
+        "safetensors",
+        "bloom",
+        "text-generation",
+        "pashto",
+        "zamai-bloom",
+        "ps",
+        "dataset:tasal9/pashto_base_bloom",
+        "dataset:local_dataset_identifier_for_base_training",
+        "arxiv:2211.05100",
+        "license:mit",
+        "autotrain_compatible",
+        "text-generation-inference",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "downloads": 21,
+      "likes": 0
+    },
+    "inference_tests": {
+      "direct_api": {
+        "status_code": 404,
+        "success": false,
+        "response": "Not Found",
+        "error": "HTTP 404"
+      },
+      "inference_client": {
+        "success": false,
+        "error": ""
+      }
+    }
+  },
+  "tasal9/pashto-bloom-base": {
+    "status": {
+      "exists": true,
+      "pipeline_tag": null,
+      "library": null,
+      "private": false,
+      "gated": false,
+      "tags": [
+        "region:us"
+      ],
+      "downloads": 0,
+      "likes": 0
+    },
+    "inference_tests": {
+      "direct_api": {
+        "status_code": 404,
+        "success": false,
+        "response": "Not Found",
+        "error": "HTTP 404"
+      },
+      "inference_client": {
+        "success": false,
+        "error": ""
+      }
+    }
+  },
+  "tasal9/ZamAI-LIama3-Pashto": {
+    "status": {
+      "exists": true,
+      "pipeline_tag": null,
+      "library": null,
+      "private": true,
+      "gated": false,
+      "tags": [
+        "license:llama3",
+        "region:us"
+      ],
+      "downloads": 0,
+      "likes": 0
+    },
+    "inference_tests": null
+  },
+  "tasal9/Multilingual-ZamAI-Embeddings": {
+    "status": {
+      "exists": true,
+      "pipeline_tag": "feature-extraction",
+      "library": "sentence-transformers",
+      "private": false,
+      "gated": false,
+      "tags": [
+        "sentence-transformers",
+        "bert",
+        "multilingual",
+        "embeddings",
+        "semantic-search",
+        "pashto",
+        "chromadb",
+        "llamaindex",
+        "feature-extraction",
+        "ps",
+        "en",
+        "dataset:tasal9/Pashto_Dataset",
+        "license:apache-2.0",
+        "autotrain_compatible",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "downloads": 0,
+      "likes": 0
+    },
+    "inference_tests": {
+      "direct_api": {
+        "status_code": 404,
+        "success": false,
+        "response": "Not Found",
+        "error": "HTTP 404"
+      },
+      "inference_client": {
+        "success": false,
+        "error": "InferenceClient.feature_extraction() got an unexpected keyword argument 'inputs'"
+      }
+    }
+  },
+  "tasal9/ZamAI-Mistral-7B-Pashto": {
+    "status": {
+      "exists": true,
+      "pipeline_tag": "text-generation",
+      "library": "transformers",
+      "private": false,
+      "gated": false,
+      "tags": [
+        "transformers",
+        "mistral",
+        "pashto",
+        "afghanistan",
+        "fine-tuned",
+        "zamai",
+        "multilingual",
+        "text-generation",
+        "lora",
+        "autotrain",
+        "ps",
+        "fa",
+        "ar",
+        "en",
+        "base_model:mistralai/Mistral-7B-v0.1",
+        "base_model:adapter:mistralai/Mistral-7B-v0.1",
+        "license:apache-2.0",
+        "endpoints_compatible",
+        "region:us"
+      ],
+      "downloads": 0,
+      "likes": 0
+    },
+    "inference_tests": {
+      "direct_api": {
+        "status_code": 404,
+        "success": false,
+        "response": "Not Found",
+        "error": "HTTP 404"
+      },
+      "inference_client": {
+        "success": false,
+        "error": ""
+      }
+    }
+  }
+}

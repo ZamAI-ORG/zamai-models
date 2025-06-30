@@ -1,0 +1,52 @@
+{
+  "base_model": "meta-llama/Llama-3.1-8B-Instruct",
+  "model_version": "v1.0",
+  "output_dir": "./outputs/zamai-pashto-chat-8b",
+  "hub_model_id": "tasal9/zamai-pashto-chat-8b",
+  "dataset_name": "tasal9/ZamAI_Pashto_Dataset",
+  "dataset_format": "instruction",
+  "train_file": "pashto_train_instruction.jsonl",
+  "validation_file": "pashto_val_instruction.jsonl",
+  "max_length": 2048,
+  "push_to_hub": true,
+  "private_repo": false,
+  "use_wandb": true,
+  "lora": {
+    "rank": 64,
+    "alpha": 128,
+    "dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "training": {
+    "epochs": 3,
+    "batch_size": 2,
+    "gradient_accumulation": 8,
+    "learning_rate": 2e-5,
+    "warmup_steps": 500,
+    "logging_steps": 10,
+    "save_steps": 500,
+    "eval_steps": 500,
+    "max_grad_norm": 1.0
+  },
+  "pashto_specialization": {
+    "cultural_context": true,
+    "islamic_references": true,
+    "afghan_geography": true,
+    "pashto_literature": true,
+    "code_switching": true,
+    "formal_informal_register": true
+  },
+  "system_prompts": {
+    "general": "تاسو د پښتو ژبې یو ګټور مرستیال یاست. د افغان کلتور په درناوي سره ځواب ورکړئ.",
+    "educational": "تاسو د پښتو ژبې ښوونکی یاست. د زده کونکو سره صبر وکړئ او ښه تشریح ورکړئ.",
+    "cultural": "د افغانستان د کلتور، تاریخ او دودونو په اړه مالومات ورکړئ. د اسلامي ارزښتونو درناوی وکړئ."
+  }
+}

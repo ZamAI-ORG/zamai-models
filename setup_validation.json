@@ -1,0 +1,23 @@
+{
+  "environment": {
+    "hf_token": true
+  },
+  "files": {
+    "HF-Token.txt": true,
+    "fine-tuning/train_pashto_chat.py": true,
+    "fine-tuning/configs/pashto_chat_config.json": true,
+    "train_zamai_v4.py": true,
+    "analyze_zamai_dataset.py": true,
+    "test_models.py": true
+  },
+  "config": {
+    "base_model": "meta-llama/Llama-3.1-8B-Instruct",
+    "dataset_name": "tasal9/ZamAI_Pashto_Dataset",
+    "dataset_format": "instruction",
+    "train_file": "pashto_train_instruction.jsonl",
+    "validation_file": "pashto_val_instruction.jsonl",
+    "hub_model_id": "tasal9/zamai-pashto-chat-8b",
+    "valid": true
+  },
+  "ready_to_train": true
+}

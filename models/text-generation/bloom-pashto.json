@@ -1,0 +1,69 @@
+{
+  "model_id": "tasal9/pashto-base-bloom",
+  "model_type": "text-generation",
+  "architecture": "bloom",
+  "task": "text-generation",
+  "priority": "tertiary",
+  "description": "Fast and reliable BLOOM-based Pashto text generation model",
+  "features": [
+    "Fast inference",
+    "Lightweight",
+    "Reliable generation",
+    "Good for basic tasks"
+  ],
+  "use_cases": [
+    "Quick text completion",
+    "Simple conversations",
+    "Text generation",
+    "Fallback model"
+  ],
+  "model_config": {
+    "max_length": 1024,
+    "temperature": 0.9,
+    "top_p": 0.95,
+    "top_k": 60,
+    "repetition_penalty": 1.2,
+    "do_sample": true
+  },
+  "training_config": {
+    "base_model": "bigscience/bloom-560m",
+    "fine_tuning_method": "Full fine-tuning",
+    "dataset": "pashto_text_corpus",
+    "epochs": 5,
+    "learning_rate": 5e-5,
+    "batch_size": 8,
+    "gradient_accumulation_steps": 4
+  },
+  "api_endpoint": {
+    "url": "https://api-inference.huggingface.co/models/tasal9/pashto-base-bloom",
+    "method": "POST",
+    "headers": {
+      "Authorization": "Bearer {HF_TOKEN}",
+      "Content-Type": "application/json"
+    }
+  },
+  "integration": {
+    "server_path": "services/huggingfaceService.js",
+    "function_name": "generatePashtoTextBloom",
+    "priority_order": 3
+  },
+  "prompt_template": {
+    "system": "د پښتو ژبې متن جوړول:",
+    "user_prefix": "",
+    "assistant_prefix": "",
+    "format": "{user_input}"
+  },
+  "performance": {
+    "response_time": "~1-2 seconds",
+    "quality": "good",
+    "cultural_accuracy": "moderate",
+    "speed": "very_fast"
+  },
+  "stats": {
+    "downloads": 21,
+    "popularity": "highest"
+  },
+  "created_date": "2025-06-14",
+  "last_updated": "2025-06-14",
+  "status": "active"
+}

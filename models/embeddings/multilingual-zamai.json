@@ -1,0 +1,72 @@
+{
+  "model_id": "tasal9/Multilingual-ZamAI-Embeddings",
+  "model_type": "embeddings",
+  "architecture": "bert",
+  "task": "feature-extraction",
+  "priority": "specialized",
+  "description": "Multilingual sentence embeddings with strong Pashto support",
+  "features": [
+    "Semantic similarity",
+    "Multilingual support",
+    "Document embeddings",
+    "Cross-lingual search"
+  ],
+  "use_cases": [
+    "Semantic search",
+    "Document similarity",
+    "Question answering",
+    "Information retrieval",
+    "Recommendation systems"
+  ],
+  "model_config": {
+    "embedding_dim": 768,
+    "max_seq_length": 512,
+    "pooling_mode": "mean",
+    "normalize_embeddings": true
+  },
+  "training_config": {
+    "base_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "fine_tuning_method": "Contrastive learning",
+    "dataset": "multilingual_pashto_pairs",
+    "epochs": 4,
+    "learning_rate": 2e-5,
+    "batch_size": 16,
+    "gradient_accumulation_steps": 2
+  },
+  "api_endpoint": {
+    "url": "https://api-inference.huggingface.co/models/tasal9/Multilingual-ZamAI-Embeddings",
+    "method": "POST",
+    "headers": {
+      "Authorization": "Bearer {HF_TOKEN}",
+      "Content-Type": "application/json"
+    }
+  },
+  "integration": {
+    "server_path": "services/embeddingService.js",
+    "function_name": "getPashtoEmbeddings",
+    "priority_order": 1
+  },
+  "supported_languages": [
+    "Pashto (ps)",
+    "English (en)",
+    "Dari (prs)",
+    "Urdu (ur)",
+    "Arabic (ar)",
+    "Persian (fa)"
+  ],
+  "performance": {
+    "response_time": "~0.5-1 seconds",
+    "quality": "high",
+    "multilingual_accuracy": "excellent",
+    "semantic_precision": "very_good"
+  },
+  "use_cases_zamai": {
+    "chat_similarity": "Find similar previous conversations",
+    "document_search": "Search Pashto documents semantically",
+    "translation_quality": "Measure translation accuracy",
+    "content_recommendation": "Recommend related content"
+  },
+  "created_date": "2025-06-21",
+  "last_updated": "2025-06-21",
+  "status": "active"
+}

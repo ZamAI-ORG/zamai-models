@@ -1,0 +1,21 @@
+{
+  "dataset_name": "tasal9/ZamAI_Pashto_Dataset",
+  "available_files": [
+    ".gitattributes",
+    "README.md",
+    "dataset_info.txt",
+    "pashto_cleaned_full_dataset.csv",
+    "pashto_cleaned_train.csv",
+    "pashto_cleaned_val.csv",
+    "pashto_train_instruction.jsonl",
+    "pashto_train_prompt_completion.jsonl",
+    "pashto_val_instruction.jsonl",
+    "pashto_val_prompt_completion.jsonl"
+  ],
+  "training_files": [
+    "pashto_train_instruction.jsonl",
+    "pashto_val_instruction.jsonl"
+  ],
+  "recommended_train": "pashto_train_instruction.jsonl",
+  "recommended_val": "pashto_val_instruction.jsonl"
+}

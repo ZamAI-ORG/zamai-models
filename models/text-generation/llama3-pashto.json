@@ -1,0 +1,65 @@
+{
+  "model_id": "tasal9/ZamAI-LIama3-Pashto",
+  "model_type": "text-generation",
+  "architecture": "llama3",
+  "task": "conversational-ai",
+  "priority": "secondary",
+  "description": "Llama3-based Pashto conversational model with advanced reasoning",
+  "features": [
+    "Advanced reasoning",
+    "Long-form conversations",
+    "Complex query handling",
+    "Multi-turn dialogue"
+  ],
+  "use_cases": [
+    "Educational assistant",
+    "Complex conversations",
+    "Academic discussions",
+    "Literature analysis"
+  ],
+  "model_config": {
+    "max_length": 4096,
+    "temperature": 0.8,
+    "top_p": 0.85,
+    "top_k": 40,
+    "repetition_penalty": 1.05,
+    "do_sample": true
+  },
+  "training_config": {
+    "base_model": "meta-llama/Meta-Llama-3-8B",
+    "fine_tuning_method": "LoRA + QLoRA",
+    "dataset": "pashto_academic_conversations",
+    "epochs": 2,
+    "learning_rate": 1e-4,
+    "batch_size": 2,
+    "gradient_accumulation_steps": 16
+  },
+  "api_endpoint": {
+    "url": "https://api-inference.huggingface.co/models/tasal9/ZamAI-LIama3-Pashto",
+    "method": "POST",
+    "headers": {
+      "Authorization": "Bearer {HF_TOKEN}",
+      "Content-Type": "application/json"
+    }
+  },
+  "integration": {
+    "server_path": "services/huggingfaceService.js",
+    "function_name": "generatePashtoTextLlama",
+    "priority_order": 2
+  },
+  "prompt_template": {
+    "system": "تاسو د پښتو ژبې یو پوه او ماهر مرستیال یاست. د افغانستان د تاریخ، کلتور او ادبیاتو پوره پوښتنې ورکړئ.",
+    "user_prefix": "پوښتونکي:",
+    "assistant_prefix": "ځوابورکوونکي:",
+    "format": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n{system}<|eot_id|><|start_header_id|>user<|end_header_id|>\n{user_input}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n"
+  },
+  "performance": {
+    "response_time": "~3-7 seconds",
+    "quality": "very_high",
+    "cultural_accuracy": "excellent",
+    "reasoning_ability": "advanced"
+  },
+  "created_date": "2025-06-18",
+  "last_updated": "2025-06-18",
+  "status": "active"
+}

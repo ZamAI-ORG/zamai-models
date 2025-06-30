@@ -1,0 +1,65 @@
+{
+  "model_id": "tasal9/ZamAI-Mistral-7B-Pashto",
+  "model_type": "text-generation",
+  "architecture": "mistral",
+  "task": "conversational-ai",
+  "priority": "primary",
+  "description": "Advanced Pashto conversational AI based on Mistral-7B",
+  "features": [
+    "Pashto conversation",
+    "Afghan cultural context",
+    "Islamic values integration",
+    "Code-switching support"
+  ],
+  "use_cases": [
+    "Chat assistant",
+    "Conversational AI",
+    "Text completion",
+    "Story generation"
+  ],
+  "model_config": {
+    "max_length": 2048,
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": 50,
+    "repetition_penalty": 1.1,
+    "do_sample": true
+  },
+  "training_config": {
+    "base_model": "mistralai/Mistral-7B-v0.1",
+    "fine_tuning_method": "LoRA",
+    "dataset": "pashto_conversations",
+    "epochs": 3,
+    "learning_rate": 2e-4,
+    "batch_size": 4,
+    "gradient_accumulation_steps": 8
+  },
+  "api_endpoint": {
+    "url": "https://api-inference.huggingface.co/models/tasal9/ZamAI-Mistral-7B-Pashto",
+    "method": "POST",
+    "headers": {
+      "Authorization": "Bearer {HF_TOKEN}",
+      "Content-Type": "application/json"
+    }
+  },
+  "integration": {
+    "server_path": "services/huggingfaceService.js",
+    "function_name": "generatePashtoText",
+    "priority_order": 1
+  },
+  "prompt_template": {
+    "system": "تاسو د پښتو ژبې یو ماهر مرستیال یاست. د افغان کلتور او اسلامي ارزښتونو درناوی وکړئ.",
+    "user_prefix": "کاروونکي:",
+    "assistant_prefix": "مرستیال:",
+    "format": "<|system|>\n{system}\n<|user|>\n{user_input}\n<|assistant|>\n"
+  },
+  "performance": {
+    "response_time": "~2-5 seconds",
+    "quality": "high",
+    "cultural_accuracy": "excellent",
+    "language_fluency": "native-level"
+  },
+  "created_date": "2025-06-24",
+  "last_updated": "2025-06-24",
+  "status": "active"
+}
