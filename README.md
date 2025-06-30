@@ -1,4 +1,4 @@
-# 🇦🇫 ZamAI Hugging Face Models
+# ZamAI Hugging Face Models
 
 A comprehensive toolkit for training, testing, and managing Pashto language AI models using Hugging Face.
 
