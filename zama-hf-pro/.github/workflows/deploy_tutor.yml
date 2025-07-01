@@ -1,0 +1,30 @@
+name: Deploy Tutor Bot
+on:
+  push:
+    paths: ['tutor_bot/**']
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        pip install huggingface_hub gradio transformers torch
+
+    - name: Deploy to Hugging Face Spaces
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      run: |
+        huggingface-cli upload tasal9/zamai-tutor-bot \
+          tutor_bot/src/* \
+          --repo-type=space \
+          --commit-message="Auto-deploy: ${{ github.sha }}"
