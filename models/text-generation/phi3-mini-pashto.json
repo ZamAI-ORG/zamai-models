@@ -1,0 +1,26 @@
+{
+  "model_id": "tasal9/ZamAI-Phi-3-Mini-Pashto",
+  "source_model": "microsoft/Phi-3-mini-4k-instruct",
+  "model_type": "text-generation",
+  "description": "Phi-3 Mini model optimized for Pashto language support",
+  "features": [
+    "instruction-following",
+    "chat",
+    "lightweight",
+    "pashto-optimized"
+  ],
+  "parameters": {
+    "max_length": 4096,
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "trust_remote_code": true
+  },
+  "metadata": {
+    "language": "ps",
+    "size": "2.7B",
+    "quantization": "none",
+    "version": "1.0.0",
+    "created_date": "2025-07-01"
+  },
+  "status": "active"
+}

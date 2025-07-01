@@ -1,5 +1,25 @@
 # 🎉 ZamAI Project Organization Complete!
 
+## 🆕 Latest Updates (July 1, 2025)
+
+### ✅ Added New Models to ZamAI Project
+- **tasal9/ZamAI-Whisper-v3-Pashto** (from openai/whisper-large-v3)
+- **tasal9/ZamAI-Phi-3-Mini-Pashto** (from microsoft/Phi-3-mini-4k-instruct)
+
+### ✅ Created Scripts
+- Push scripts: `scripts/utils/push_whisper_pashto.py`, `scripts/utils/push_phi3_mini_pashto.py`
+- Test scripts: `scripts/testing/test_whisper_pashto.py`, `scripts/testing/test_phi3_mini_pashto.py`
+
+### ✅ Updated Deployment Configuration
+- Set tasal9/ZamAI-Whisper-v3-Pashto as primary speech recognition model
+- Added tasal9/ZamAI-Phi-3-Mini-Pashto as lightweight text generation option
+- Added new API endpoint for Phi-3 Pashto
+
+### ✅ Updated Documentation
+- Added models to MODEL_CATALOG.md
+- Updated model count from 5 to 7 in FINAL_PROJECT_STATE.md
+- Added usage examples to DEPLOYMENT_GUIDE.md
+
 ## ✅ What's Been Organized
 
 ### 📁 **New Project Structure**

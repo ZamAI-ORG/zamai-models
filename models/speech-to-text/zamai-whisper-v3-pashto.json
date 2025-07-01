@@ -1,0 +1,29 @@
+{
+  "model_id": "tasal9/ZamAI-Whisper-v3-Pashto",
+  "base_model": "openai/whisper-large-v3",
+  "task": "automatic-speech-recognition",
+  "priority": "primary",
+  "status": "deployed",
+  "features": ["speech-to-text", "understanding", "pashto-optimized"],
+  "languages": ["ps", "en", "fa", "ar", "ur", "hi"],
+  "model_config": {
+    "language": "ps",
+    "task": "transcribe",
+    "return_timestamps": true,
+    "chunk_length_s": 10
+  },
+  "metadata": {
+    "description": "Pashto-optimized version of Whisper Large v3",
+    "dataset": "tasal9/ZamAI_Pashto_Speech_Dataset",
+    "tags": ["pashto", "whisper", "speech-recognition", "zamai"]
+  },
+  "deployment": {
+    "endpoint": "/api/speech-to-text/pashto",
+    "container": "zamai-whisper-pashto",
+    "resources": {
+      "gpu": "1",
+      "memory": "8Gi",
+      "cpu": "4"
+    }
+  }
+}

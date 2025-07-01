@@ -17,6 +17,8 @@
 
 | Model | Hub ID | Parameters | Use Case | Priority |
 |-------|--------|------------|----------|----------|
+| **ZamAI Phi-3 Mini Pashto** | `tasal9/ZamAI-Phi-3-Mini-Pashto` | 2.7B | Pashto Edge Deployment | ⭐⭐⭐ |
+| **Phi-3 Mini 4K** | `microsoft/Phi-3-mini-4k-instruct` | 2.7B | Edge Deployment | ⭐⭐ |
 | **Phi-3.5 Mini** | `microsoft/Phi-3.5-mini-instruct` | 3.8B | Edge Deployment | ⭐⭐ |
 | **Gemma 2 2B** | `google/gemma-2-2b-it` | 2B | Mobile/Local | ⭐ |
 
@@ -46,7 +48,8 @@
 
 | Model | Hub ID | Use Case | Priority |
 |-------|--------|----------|----------|
-| **Whisper Large v3** | `openai/whisper-large-v3` | Pashto Speech→Text | ⭐⭐⭐ |
+| **ZamAI Whisper v3 Pashto** | `tasal9/ZamAI-Whisper-v3-Pashto` | Pashto-optimized Speech→Text | ⭐⭐⭐ |
+| **Whisper Large v3** | `openai/whisper-large-v3` | General Speech→Text + Understanding | ⭐⭐⭐ |
 | **Wav2Vec2 XLS-R** | `facebook/wav2vec2-xls-r-300m` | Multilingual ASR | ⭐⭐ |
 | **SpeechT5** | `microsoft/speecht5_asr` | Speech Recognition | ⭐ |
 
@@ -99,7 +102,8 @@
 - **Base**: `openai/whisper-large-v3`
 - **Purpose**: Pashto speech recognition
 - **Fine-tuning Data**: Pashto audio datasets
-- **Target Hub ID**: `tasal9/zamai-pashto-whisper`
+- **Target Hub ID**: `tasal9/ZamAI-Whisper-v3-Pashto`
+- **Status**: ✅ Deployed
 
 ---
 

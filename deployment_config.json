@@ -1,0 +1,128 @@
+{
+  "deployment_models": {
+    "speech_to_text": {
+      "primary": "tasal9/ZamAI-Whisper-v3-Pashto",
+      "fallback": "openai/whisper-large-v3",
+      "description": "Advanced speech recognition with Pashto optimization",
+      "features": ["speech-to-text", "language-understanding", "pashto-optimized", "multilingual"],
+      "use_cases": ["voice_assistant", "transcription", "conversation", "pashto-speech"]
+    },
+    "text_generation": {
+      "primary": "mistralai/Mistral-7B-Instruct-v0.3", 
+      "secondary": "tasal9/ZamAI-Phi-3-Mini-Pashto",
+      "models": {
+        "mistralai/Mistral-7B-Instruct-v0.3": {
+          "description": "High-quality instruction-following model",
+          "parameters": "7B",
+          "use_cases": ["chat", "conversation", "instruction_following"],
+          "deployment": "standard"
+        },
+        "tasal9/ZamAI-Phi-3-Mini-Pashto": {
+          "description": "Efficient small model with Pashto optimization",
+          "parameters": "2.7B", 
+          "use_cases": ["edge_deployment", "mobile", "fast_inference", "pashto_chat"],
+          "deployment": "lightweight"
+        },
+        "microsoft/Phi-3-mini-4k-instruct": {
+          "description": "Original Phi-3 Mini model (fallback)",
+          "parameters": "2.7B", 
+          "use_cases": ["edge_deployment", "mobile", "fast_inference"],
+          "deployment": "lightweight"
+        }
+      }
+    },
+    "embeddings": {
+      "primary": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "description": "Multilingual semantic embeddings",
+      "use_cases": ["semantic_search", "similarity", "clustering"]
+    }
+  },
+  "voice_assistant_pipeline": {
+    "components": {
+      "stt": {
+        "model": "tasal9/ZamAI-Whisper-v3-Pashto",
+        "config": {
+          "language": "ps",
+          "task": "transcribe",
+          "return_timestamps": true,
+          "chunk_length_s": 10
+        }
+      },
+      "nlu": {
+        "model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "config": {
+          "max_new_tokens": 150,
+          "temperature": 0.7,
+          "do_sample": true,
+          "pad_token_id": 2
+        }
+      },
+      "tts": {
+        "model": "microsoft/speecht5_tts",
+        "config": {
+          "vocoder": "microsoft/speecht5_hifigan"
+        }
+      }
+    },
+    "workflow": [
+      "audio_input",
+      "speech_to_text", 
+      "language_understanding",
+      "response_generation",
+      "text_to_speech",
+      "audio_output"
+    ]
+  },
+  "deployment_configs": {
+    "development": {
+      "cache_dir": "./cache",
+      "log_level": "INFO",
+      "device": "auto",
+      "model_loading": "lazy"
+    },
+    "production": {
+      "cache_dir": "/app/cache",
+      "log_level": "WARNING", 
+      "device": "cuda",
+      "model_loading": "eager",
+      "batch_size": 4,
+      "max_concurrent_requests": 10
+    },
+    "edge": {
+      "cache_dir": "./cache",
+      "log_level": "ERROR",
+      "device": "cpu",
+      "model_loading": "lazy",
+      "quantization": "int8",
+      "optimization": "onnx"
+    }
+  },
+  "model_endpoints": {
+    "whisper_stt": "/api/speech-to-text",
+    "mistral_chat": "/api/chat/mistral", 
+    "phi3_chat": "/api/chat/phi3",
+    "phi3_pashto_chat": "/api/chat/phi3-pashto",
+    "embeddings": "/api/embeddings",
+    "voice_pipeline": "/api/voice/complete"
+  },
+  "fine_tuning": {
+    "pashto_models": {
+      "zamai_whisper_pashto": {
+        "base_model": "openai/whisper-large-v3",
+        "dataset": "tasal9/ZamAI_Pashto_Speech_Dataset",
+        "target_hub_id": "tasal9/ZamAI-Whisper-v3-Pashto",
+        "status": "deployed"
+      },
+      "zamai_mistral_pashto": {
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.3",
+        "dataset": "tasal9/ZamAI_Pashto_Dataset", 
+        "target_hub_id": "tasal9/ZamAI-Mistral-7B-Pashto-v2"
+      },
+      "zamai_phi3_pashto": {
+        "base_model": "microsoft/Phi-3-mini-4k-instruct",
+        "dataset": "tasal9/ZamAI_Pashto_Dataset",
+        "target_hub_id": "tasal9/ZamAI-Phi3-Mini-Pashto"
+      }
+    }
+  }
+}

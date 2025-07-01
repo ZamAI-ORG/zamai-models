@@ -31,11 +31,13 @@ huggingface-models/
 - **✅ Environment**: All Python packages validated
 - **✅ HF Authentication**: Token verified (hf_ZOfSpTk...)
 - **✅ Dataset Access**: tasal9/ZamAI_Pashto_Dataset confirmed
-- **✅ Model Registry**: 5 HF models ready
+- **✅ Model Registry**: 7 HF models ready
 - **✅ Configuration**: Llama-3.1-8B + LoRA + your dataset
 
 ### **📊 Your Assets**
-**Models (5)**:
+**Models (7)**:
+- tasal9/ZamAI-Whisper-v3-Pashto
+- tasal9/ZamAI-Phi-3-Mini-Pashto
 - tasal9/ZamAI-Mistral-7B-Pashto
 - tasal9/ZamAI-LIama3-Pashto
 - tasal9/pashto-base-bloom  
@@ -66,6 +68,14 @@ python scripts/training/train_zamai_v4.py
 
 # Test existing models
 python scripts/testing/test_models.py
+
+# Test specific models
+python scripts/testing/test_whisper_pashto.py
+python scripts/testing/test_phi3_mini_pashto.py
+
+# Push models to Hugging Face
+python scripts/utils/push_whisper_pashto.py
+python scripts/utils/push_phi3_mini_pashto.py
 
 # Quick commands
 python zamai.py setup|analyze|train|test

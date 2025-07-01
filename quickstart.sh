@@ -1,32 +1,59 @@
 #!/bin/bash
-# ZamAI Project Quick Start
-# Run this script to resume work on your ZamAI project
+# ZamAI Pro Models - Quick Start Script
+# This script provides a quick and easy way to get started with ZamAI Pro Models
 
-echo "🇦🇫 ZamAI Project - Quick Start"
-echo "================================"
-echo "📁 Current directory: $(pwd)"
+set -e  # Exit on any error
+
+echo "🇦🇫 ZamAI Pro Models - Quick Start"
+echo "================================="
+
+# Color codes
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+# Function to print status messages
+print_status() {
+    echo -e "${BLUE}[INFO]${NC} $1"
+}
+
+print_success() {
+    echo -e "${GREEN}[SUCCESS]${NC} $1"
+}
+
+print_warning() {
+    echo -e "${YELLOW}[WARNING]${NC} $1"
+}
+
+print_error() {
+    echo -e "${RED}[ERROR]${NC} $1"
+}
+
+print_status "📁 Current directory: $(pwd)"
 echo ""
 
-echo "🔧 Available Commands:"
-echo "  python scripts/utils/validate_setup.py      # Validate setup"
-echo "  python scripts/analysis/analyze_zamai_dataset.py # Analyze dataset"
-echo "  python scripts/training/train_zamai_v4.py   # Train ZamAI V4"
-echo "  python scripts/testing/test_models.py       # Test models"
+echo "� Available Commands:"
+echo "  ./deploy.sh local        # Setup local deployment"
+echo "  ./deploy.sh docker       # Setup Docker deployment" 
+echo "  python health_check.py   # Check system health"
+echo "  python test_deployment_models.py # Test deployed models"
 echo ""
 
-echo "🚀 Quick Commands:"
-echo "  python zamai.py setup     # Validate"
-echo "  python zamai.py analyze   # Analyze"  
-echo "  python zamai.py train     # Train"
-echo "  python zamai.py test      # Test"
+echo "🚀 Available Deployment Components:"
+echo "  🎤 Voice Assistant: python zama-hf-pro/voice_assistant/src/app.py"
+echo "  👨‍🏫 Tutor Bot: python zama-hf-pro/tutor_bot/src/app.py"
+echo "  📊 Business Tools: python zama-hf-pro/business_automation/src/app.py"
+echo "  🚀 API Server: python zama-hf-pro/fastapi_backend/src/main.py"
 echo ""
 
-echo "📊 Your Assets:"
-echo "  🤖 Models: 5 HF models ready"
-echo "  📚 Dataset: tasal9/ZamAI_Pashto_Dataset"
-echo "  ⚙️  Config: Llama-3.1-8B + LoRA + your data"
-echo "  🎯 Output: tasal9/zamai-pashto-chat-8b"
+echo "📋 Deployed Models:"
+echo "  💬 Text Generation: mistralai/Mistral-7B-Instruct-v0.3"
+echo "  🔉 Speech-to-Text: openai/whisper-large-v3"
+echo "  📱 Edge Deployment: microsoft/Phi-3-mini-4k-instruct"
 echo ""
 
-echo "✅ Project Status: READY FOR TRAINING!"
-echo "🎯 Next: Run 'python scripts/training/train_zamai_v4.py' to start training"
+echo "✅ Project Status: READY FOR DEPLOYMENT!"
+echo "🎯 Next: Run './deploy.sh local' to start local deployment"
+echo "📚 For full documentation, see README.md and DEPLOYMENT_GUIDE.md"
