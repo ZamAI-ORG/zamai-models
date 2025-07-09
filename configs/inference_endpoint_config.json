@@ -1,0 +1,18 @@
+{
+  "compute": {
+    "accelerator": "gpu",
+    "instance_size": "medium",
+    "instance_type": "nvidia-tesla-t4",
+    "scaling": {
+      "min_replica": 0,
+      "max_replica": 1
+    }
+  },
+  "model": {
+    "image": {
+      "huggingface": {}
+    },
+    "task": "text-generation"
+  },
+  "name": "zamai-pashto-chat-endpoint"
+}

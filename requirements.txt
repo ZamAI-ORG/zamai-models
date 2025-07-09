@@ -12,6 +12,10 @@ huggingface-hub>=0.19.0
 gradio>=4.8.0
 safetensors>=0.4.0
 
+# HF Inference
+huggingface-hub[inference]>=0.19.0
+aiohttp>=3.9.0
+
 # Audio Processing
 torchaudio>=2.1.0
 librosa>=0.10.0

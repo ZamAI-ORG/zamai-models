@@ -7,6 +7,8 @@ Fine-tune language models for Pashto chat and text generation
 import os
 import json
 import torch
+import sys
+from pathlib import Path
 from datasets import load_dataset, Dataset
 from transformers import (
     AutoTokenizer, AutoModelForCausalLM,

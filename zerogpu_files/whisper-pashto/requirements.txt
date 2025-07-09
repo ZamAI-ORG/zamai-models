@@ -1,0 +1,9 @@
+gradio
+torch
+transformers
+spaces
+datasets
+numpy
+huggingface_hub
+librosa
+soundfile

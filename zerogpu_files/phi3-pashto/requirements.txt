@@ -1,0 +1,10 @@
+gradio
+torch
+transformers
+spaces
+datasets
+numpy
+huggingface_hub
+peft
+bitsandbytes
+accelerate
