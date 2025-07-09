@@ -1,0 +1,339 @@
+{
+  "timestamp": "2025-07-09",
+  "existing_models": {
+    "tasal9/pashto-base-bloom": {
+      "created": "2025-06-14 00:15:53+00:00",
+      "downloads": 39,
+      "likes": 0
+    },
+    "tasal9/ZamAI-LIama3-Pashto": {
+      "created": "2025-06-18 05:40:51+00:00",
+      "downloads": 0,
+      "likes": 0
+    },
+    "tasal9/Multilingual-ZamAI-Embeddings": {
+      "created": "2025-06-21 11:55:14+00:00",
+      "downloads": 28,
+      "likes": 0
+    },
+    "tasal9/ZamAI-Mistral-7B-Pashto": {
+      "created": "2025-06-24 13:27:50+00:00",
+      "downloads": 0,
+      "likes": 0
+    },
+    "tasal9/ZamAI-Phi-3-Mini-Pashto": {
+      "created": "2025-06-30 16:56:44+00:00",
+      "downloads": 0,
+      "likes": 0
+    },
+    "tasal9/ZamAI-Whisper-v3-Pashto": {
+      "created": "2025-07-01 04:34:31+00:00",
+      "downloads": 0,
+      "likes": 0
+    }
+  },
+  "existing_spaces": {
+    "tasal9/ZamAI-Multilingual-Pashto-Embeddings-Demo": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "SLEEPING",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ]
+    },
+    "tasal9/ZamAI-Pashto-Education-Bot-Demo": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": false,
+      "runtime": "SLEEPING",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py"
+      ]
+    },
+    "tasal9/HF-Inference": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": false,
+      "has_requirements": false,
+      "runtime": "NO_APP_FILE",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app. py",
+        "requirements. txt"
+      ]
+    },
+    "tasal9/ZamAI-Pashto-Multimodel-AI-Playground": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": false,
+      "has_requirements": false,
+      "runtime": "NO_APP_FILE",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app. py",
+        "graphQL. mermaid",
+        "requirements. txt"
+      ]
+    },
+    "tasal9/zamai-bloom-pashto": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "RUNTIME_ERROR",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ]
+    },
+    "tasal9/zamai-embeddings-multilingual": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "RUNNING",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ]
+    },
+    "tasal9/zamai-llama3-pashto": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "RUNNING",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ]
+    },
+    "tasal9/zamai-mistral-pashto": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "RUNTIME_ERROR",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ]
+    },
+    "tasal9/zamai-phi3-pashto": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "RUNNING",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ]
+    },
+    "tasal9/zamai-whisper-pashto": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "RUNTIME_ERROR",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ]
+    },
+    "tasal9/zamai-pashto-chat": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "RUNNING",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ]
+    },
+    "tasal9/zamai-pashto-bloom": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "RUNNING",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ]
+    },
+    "tasal9/zamai-phi3-business": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "RUNNING",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ]
+    },
+    "tasal9/zamai-whisper-speech": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "RUNNING",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ]
+    },
+    "tasal9/zamai-embeddings": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "RUNNING",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ]
+    },
+    "tasal9/zamai-training-hub": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "RUNTIME_ERROR",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "bloom-pashto/README.md",
+        "bloom-pashto/app.py",
+        "bloom-pashto/requirements.txt",
+        "embeddings-multilingual/README.md",
+        "embeddings-multilingual/app.py",
+        "embeddings-multilingual/requirements.txt",
+        "llama3-pashto/README.md",
+        "llama3-pashto/app.py",
+        "llama3-pashto/requirements.txt",
+        "mistral-pashto/README.md",
+        "mistral-pashto/app.py",
+        "mistral-pashto/requirements.txt",
+        "phi3-pashto/README.md",
+        "phi3-pashto/app.py",
+        "phi3-pashto/requirements.txt",
+        "requirements.txt",
+        "whisper-pashto/README.md",
+        "whisper-pashto/app.py",
+        "whisper-pashto/requirements.txt"
+      ]
+    },
+    "tasal9/zamai-test-space": {
+      "exists": true,
+      "has_readme": true,
+      "has_app": true,
+      "has_requirements": true,
+      "runtime": "RUNNING",
+      "sdk": "gradio",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ]
+    }
+  },
+  "local_models": [
+    {
+      "path": "/workspaces/ZamAI-Pro-Models/models/text-generation",
+      "files": [
+        "bloom-pashto.json",
+        "phi3-mini-pashto.json",
+        "llama3-pashto.json",
+        "mistral-7b-pashto.json"
+      ]
+    },
+    {
+      "path": "/workspaces/ZamAI-Pro-Models/models/embeddings",
+      "files": [
+        "multilingual-zamai.json"
+      ]
+    },
+    {
+      "path": "/workspaces/ZamAI-Pro-Models/models/speech-to-text",
+      "files": [
+        "zamai-whisper-v3-pashto.json"
+      ]
+    },
+    {
+      "path": "/workspaces/ZamAI-Pro-Models/fine-tuning/configs",
+      "files": [
+        "pashto_chat_config.json"
+      ]
+    }
+  ],
+  "missing_models": [
+    "tasal9/zamai-pashto-chat-8b",
+    "tasal9/zamai-translator-pashto-en",
+    "tasal9/zamai-qa-pashto",
+    "tasal9/zamai-sentiment-pashto",
+    "tasal9/zamai-dialogpt-pashto-v3"
+  ],
+  "problem_spaces": [
+    [
+      "tasal9/HF-Inference",
+      "Missing app.py"
+    ],
+    [
+      "tasal9/ZamAI-Pashto-Multimodel-AI-Playground",
+      "Missing app.py"
+    ]
+  ]
+}

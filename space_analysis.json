@@ -1,0 +1,471 @@
+{
+  "models": [
+    "tasal9/pashto-base-bloom",
+    "tasal9/ZamAI-LIama3-Pashto",
+    "tasal9/Multilingual-ZamAI-Embeddings",
+    "tasal9/ZamAI-Mistral-7B-Pashto",
+    "tasal9/ZamAI-Phi-3-Mini-Pashto",
+    "tasal9/ZamAI-Whisper-v3-Pashto",
+    "tasal9/zamai-pashto-chat-8b",
+    "tasal9/zamai-translator-pashto-en",
+    "tasal9/zamai-qa-pashto",
+    "tasal9/zamai-sentiment-pashto",
+    "tasal9/zamai-dialogpt-pashto-v3"
+  ],
+  "spaces": [
+    {
+      "id": "tasal9/ZamAI-Multilingual-Pashto-Embeddings-Demo",
+      "name": "ZamAI-Multilingual-Pashto-Embeddings-Demo",
+      "full_name": "tasal9/ZamAI-Multilingual-Pashto-Embeddings-Demo"
+    },
+    {
+      "id": "tasal9/ZamAI-Pashto-Education-Bot-Demo",
+      "name": "ZamAI-Pashto-Education-Bot-Demo",
+      "full_name": "tasal9/ZamAI-Pashto-Education-Bot-Demo"
+    },
+    {
+      "id": "tasal9/HF-Inference",
+      "name": "HF-Inference",
+      "full_name": "tasal9/HF-Inference"
+    },
+    {
+      "id": "tasal9/ZamAI-Pashto-Multimodel-AI-Playground",
+      "name": "ZamAI-Pashto-Multimodel-AI-Playground",
+      "full_name": "tasal9/ZamAI-Pashto-Multimodel-AI-Playground"
+    },
+    {
+      "id": "tasal9/zamai-bloom-pashto",
+      "name": "zamai-bloom-pashto",
+      "full_name": "tasal9/zamai-bloom-pashto"
+    },
+    {
+      "id": "tasal9/zamai-embeddings-multilingual",
+      "name": "zamai-embeddings-multilingual",
+      "full_name": "tasal9/zamai-embeddings-multilingual"
+    },
+    {
+      "id": "tasal9/zamai-llama3-pashto",
+      "name": "zamai-llama3-pashto",
+      "full_name": "tasal9/zamai-llama3-pashto"
+    },
+    {
+      "id": "tasal9/zamai-mistral-pashto",
+      "name": "zamai-mistral-pashto",
+      "full_name": "tasal9/zamai-mistral-pashto"
+    },
+    {
+      "id": "tasal9/zamai-phi3-pashto",
+      "name": "zamai-phi3-pashto",
+      "full_name": "tasal9/zamai-phi3-pashto"
+    },
+    {
+      "id": "tasal9/zamai-whisper-pashto",
+      "name": "zamai-whisper-pashto",
+      "full_name": "tasal9/zamai-whisper-pashto"
+    },
+    {
+      "id": "tasal9/zamai-pashto-chat",
+      "name": "zamai-pashto-chat",
+      "full_name": "tasal9/zamai-pashto-chat"
+    },
+    {
+      "id": "tasal9/zamai-pashto-bloom",
+      "name": "zamai-pashto-bloom",
+      "full_name": "tasal9/zamai-pashto-bloom"
+    },
+    {
+      "id": "tasal9/zamai-phi3-business",
+      "name": "zamai-phi3-business",
+      "full_name": "tasal9/zamai-phi3-business"
+    },
+    {
+      "id": "tasal9/zamai-whisper-speech",
+      "name": "zamai-whisper-speech",
+      "full_name": "tasal9/zamai-whisper-speech"
+    },
+    {
+      "id": "tasal9/zamai-embeddings",
+      "name": "zamai-embeddings",
+      "full_name": "tasal9/zamai-embeddings"
+    },
+    {
+      "id": "tasal9/zamai-training-hub",
+      "name": "zamai-training-hub",
+      "full_name": "tasal9/zamai-training-hub"
+    },
+    {
+      "id": "tasal9/zamai-test-space",
+      "name": "zamai-test-space",
+      "full_name": "tasal9/zamai-test-space"
+    },
+    {
+      "id": "tasal9/zamai-whisper-speech-robust",
+      "name": "zamai-whisper-speech-robust",
+      "full_name": "tasal9/zamai-whisper-speech-robust"
+    }
+  ],
+  "categorized": {
+    "tasal9/pashto-base-bloom": {
+      "testing_spaces": [],
+      "training_spaces": [],
+      "uncategorized_spaces": [
+        {
+          "id": "tasal9/zamai-bloom-pashto",
+          "name": "zamai-bloom-pashto",
+          "full_name": "tasal9/zamai-bloom-pashto"
+        },
+        {
+          "id": "tasal9/zamai-pashto-bloom",
+          "name": "zamai-pashto-bloom",
+          "full_name": "tasal9/zamai-pashto-bloom"
+        }
+      ]
+    },
+    "tasal9/ZamAI-LIama3-Pashto": {
+      "testing_spaces": [
+        {
+          "id": "tasal9/ZamAI-Multilingual-Pashto-Embeddings-Demo",
+          "name": "ZamAI-Multilingual-Pashto-Embeddings-Demo",
+          "full_name": "tasal9/ZamAI-Multilingual-Pashto-Embeddings-Demo"
+        },
+        {
+          "id": "tasal9/ZamAI-Pashto-Education-Bot-Demo",
+          "name": "ZamAI-Pashto-Education-Bot-Demo",
+          "full_name": "tasal9/ZamAI-Pashto-Education-Bot-Demo"
+        },
+        {
+          "id": "tasal9/zamai-pashto-chat",
+          "name": "zamai-pashto-chat",
+          "full_name": "tasal9/zamai-pashto-chat"
+        }
+      ],
+      "training_spaces": [],
+      "uncategorized_spaces": [
+        {
+          "id": "tasal9/ZamAI-Pashto-Multimodel-AI-Playground",
+          "name": "ZamAI-Pashto-Multimodel-AI-Playground",
+          "full_name": "tasal9/ZamAI-Pashto-Multimodel-AI-Playground"
+        },
+        {
+          "id": "tasal9/zamai-llama3-pashto",
+          "name": "zamai-llama3-pashto",
+          "full_name": "tasal9/zamai-llama3-pashto"
+        },
+        {
+          "id": "tasal9/zamai-mistral-pashto",
+          "name": "zamai-mistral-pashto",
+          "full_name": "tasal9/zamai-mistral-pashto"
+        },
+        {
+          "id": "tasal9/zamai-phi3-pashto",
+          "name": "zamai-phi3-pashto",
+          "full_name": "tasal9/zamai-phi3-pashto"
+        },
+        {
+          "id": "tasal9/zamai-whisper-pashto",
+          "name": "zamai-whisper-pashto",
+          "full_name": "tasal9/zamai-whisper-pashto"
+        }
+      ]
+    },
+    "tasal9/Multilingual-ZamAI-Embeddings": {
+      "testing_spaces": [],
+      "training_spaces": [],
+      "uncategorized_spaces": [
+        {
+          "id": "tasal9/zamai-embeddings-multilingual",
+          "name": "zamai-embeddings-multilingual",
+          "full_name": "tasal9/zamai-embeddings-multilingual"
+        },
+        {
+          "id": "tasal9/zamai-embeddings",
+          "name": "zamai-embeddings",
+          "full_name": "tasal9/zamai-embeddings"
+        }
+      ]
+    },
+    "tasal9/ZamAI-Mistral-7B-Pashto": {
+      "testing_spaces": [],
+      "training_spaces": [],
+      "uncategorized_spaces": []
+    },
+    "tasal9/ZamAI-Phi-3-Mini-Pashto": {
+      "testing_spaces": [],
+      "training_spaces": [],
+      "uncategorized_spaces": [
+        {
+          "id": "tasal9/zamai-phi3-business",
+          "name": "zamai-phi3-business",
+          "full_name": "tasal9/zamai-phi3-business"
+        }
+      ]
+    },
+    "tasal9/ZamAI-Whisper-v3-Pashto": {
+      "testing_spaces": [],
+      "training_spaces": [],
+      "uncategorized_spaces": [
+        {
+          "id": "tasal9/zamai-whisper-speech",
+          "name": "zamai-whisper-speech",
+          "full_name": "tasal9/zamai-whisper-speech"
+        },
+        {
+          "id": "tasal9/zamai-whisper-speech-robust",
+          "name": "zamai-whisper-speech-robust",
+          "full_name": "tasal9/zamai-whisper-speech-robust"
+        }
+      ]
+    },
+    "tasal9/zamai-pashto-chat-8b": {
+      "testing_spaces": [],
+      "training_spaces": [],
+      "uncategorized_spaces": []
+    },
+    "tasal9/zamai-translator-pashto-en": {
+      "testing_spaces": [],
+      "training_spaces": [],
+      "uncategorized_spaces": []
+    },
+    "tasal9/zamai-qa-pashto": {
+      "testing_spaces": [],
+      "training_spaces": [],
+      "uncategorized_spaces": []
+    },
+    "tasal9/zamai-sentiment-pashto": {
+      "testing_spaces": [],
+      "training_spaces": [],
+      "uncategorized_spaces": []
+    },
+    "tasal9/zamai-dialogpt-pashto-v3": {
+      "testing_spaces": [],
+      "training_spaces": [],
+      "uncategorized_spaces": []
+    }
+  },
+  "analyses": [
+    {
+      "space_id": "tasal9/zamai-bloom-pashto",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [],
+      "recommendations": [],
+      "model": "tasal9/pashto-base-bloom",
+      "category": "uncategorized"
+    },
+    {
+      "space_id": "tasal9/zamai-pashto-bloom",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [],
+      "recommendations": [],
+      "model": "tasal9/pashto-base-bloom",
+      "category": "uncategorized"
+    },
+    {
+      "space_id": "tasal9/ZamAI-Multilingual-Pashto-Embeddings-Demo",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [
+        "Missing @spaces.GPU decorator"
+      ],
+      "recommendations": [
+        "Consider adding torch_dtype=torch.float16 for efficiency",
+        "Consider adding device_map='auto'"
+      ],
+      "model": "tasal9/ZamAI-LIama3-Pashto",
+      "category": "testing"
+    },
+    {
+      "space_id": "tasal9/ZamAI-Pashto-Education-Bot-Demo",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [
+        "Missing @spaces.GPU decorator"
+      ],
+      "recommendations": [],
+      "model": "tasal9/ZamAI-LIama3-Pashto",
+      "category": "testing"
+    },
+    {
+      "space_id": "tasal9/zamai-pashto-chat",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [],
+      "recommendations": [],
+      "model": "tasal9/ZamAI-LIama3-Pashto",
+      "category": "testing"
+    },
+    {
+      "space_id": "tasal9/ZamAI-Pashto-Multimodel-AI-Playground",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app. py",
+        "app.py",
+        "graphQL. mermaid",
+        "requirements. txt",
+        "requirements.txt"
+      ],
+      "issues": [],
+      "recommendations": [],
+      "model": "tasal9/ZamAI-LIama3-Pashto",
+      "category": "uncategorized"
+    },
+    {
+      "space_id": "tasal9/zamai-llama3-pashto",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [],
+      "recommendations": [],
+      "model": "tasal9/ZamAI-LIama3-Pashto",
+      "category": "uncategorized"
+    },
+    {
+      "space_id": "tasal9/zamai-mistral-pashto",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [],
+      "recommendations": [],
+      "model": "tasal9/ZamAI-LIama3-Pashto",
+      "category": "uncategorized"
+    },
+    {
+      "space_id": "tasal9/zamai-phi3-pashto",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [],
+      "recommendations": [],
+      "model": "tasal9/ZamAI-LIama3-Pashto",
+      "category": "uncategorized"
+    },
+    {
+      "space_id": "tasal9/zamai-whisper-pashto",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [],
+      "recommendations": [],
+      "model": "tasal9/ZamAI-LIama3-Pashto",
+      "category": "uncategorized"
+    },
+    {
+      "space_id": "tasal9/zamai-embeddings-multilingual",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [],
+      "recommendations": [
+        "Consider adding torch_dtype=torch.float16 for efficiency",
+        "Consider adding device_map='auto'"
+      ],
+      "model": "tasal9/Multilingual-ZamAI-Embeddings",
+      "category": "uncategorized"
+    },
+    {
+      "space_id": "tasal9/zamai-embeddings",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [
+        "Missing @spaces.GPU decorator"
+      ],
+      "recommendations": [
+        "Consider adding torch_dtype=torch.float16 for efficiency",
+        "Consider adding device_map='auto'"
+      ],
+      "model": "tasal9/Multilingual-ZamAI-Embeddings",
+      "category": "uncategorized"
+    },
+    {
+      "space_id": "tasal9/zamai-phi3-business",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [],
+      "recommendations": [],
+      "model": "tasal9/ZamAI-Phi-3-Mini-Pashto",
+      "category": "uncategorized"
+    },
+    {
+      "space_id": "tasal9/zamai-whisper-speech",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [
+        "Missing @spaces.GPU decorator"
+      ],
+      "recommendations": [
+        "Consider adding torch_dtype=torch.float16 for efficiency",
+        "Consider adding device_map='auto'"
+      ],
+      "model": "tasal9/ZamAI-Whisper-v3-Pashto",
+      "category": "uncategorized"
+    },
+    {
+      "space_id": "tasal9/zamai-whisper-speech-robust",
+      "files": [
+        ".gitattributes",
+        "README.md",
+        "app.py",
+        "requirements.txt"
+      ],
+      "issues": [],
+      "recommendations": [],
+      "model": "tasal9/ZamAI-Whisper-v3-Pashto",
+      "category": "uncategorized"
+    }
+  ],
+  "summary": {
+    "total_models": 11,
+    "total_spaces": 18,
+    "spaces_with_issues": 4,
+    "total_issues": 4
+  }
+}

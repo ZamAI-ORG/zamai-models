@@ -1,0 +1,19 @@
+{
+  "model_name": "tasal9/zamai-sentiment-pashto",
+  "base_model": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+  "task": "sentiment_analysis",
+  "description": "Pashto sentiment analysis model",
+  "training_params": {
+    "learning_rate": 2e-05,
+    "batch_size": 4,
+    "num_epochs": 3,
+    "max_length": 512,
+    "use_lora": true,
+    "lora_r": 16,
+    "lora_alpha": 32
+  },
+  "dataset": {
+    "train_file": "data/pashto_training_data.json",
+    "validation_split": 0.1
+  }
+}
