@@ -9,6 +9,9 @@
 
 ## 🌟 Overview
 
+> **🚨 Having "localhost refused to connect" issues?**  
+> Jump to [Quick Start](#-quick-start---complete-deployment) or read [TROUBLESHOOTING.md](TROUBLESHOOTING.md) and [QUICKSTART.md](QUICKSTART.md)
+
 ZamAI Pro Models is a comprehensive, production-ready AI ecosystem designed specifically for Pashto language processing and Afghan cultural context. This project includes speech recognition, text generation, understanding, and voice synthesis capabilities.
 
 ### 🎯 Key Features
@@ -97,6 +100,39 @@ zama-hf-pro/
 - **Fallback**: Automatic model switching on errors
 
 ## � Quick Start - Complete Deployment
+
+### ⚡ Fastest Way to Get Started
+
+**Having localhost connection issues? Follow these steps:**
+
+1. **Get HuggingFace Token** (Required)
+   - Visit: https://huggingface.co/settings/tokens
+   - Create a token with "read" permissions
+   - Copy your token (starts with `hf_`)
+
+2. **Quick Setup**
+```bash
+# Clone the repository
+git clone https://github.com/tasal9/ZamAI-Pro-Models.git
+cd ZamAI-Pro-Models
+
+# Set your token (choose ONE method):
+echo "hf_YOUR_TOKEN_HERE" > HF-Token.txt
+# OR
+export HUGGINGFACE_TOKEN="hf_YOUR_TOKEN_HERE"
+
+# Run pre-flight check
+python3 test_startup.py
+
+# Start the application
+./start_voice_assistant.sh
+```
+
+3. **Access the Application**
+   - Open browser: http://localhost:7860
+   - You should see the ZamAI Voice Assistant interface
+
+**Troubleshooting:** If localhost refuses to connect, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md) and [QUICKSTART.md](QUICKSTART.md)
 
 ### Option 1: One-Click Deployment Script
 
@@ -228,6 +264,17 @@ Apache 2.0 License - See [LICENSE](LICENSE) for details
 - **Project Lead**: tasal9@huggingface.co
 - **Community**: [ZamAI Discord](https://discord.gg/zamai)
 - **Issues**: [GitHub Issues](https://github.com/tasal9/ZamAI-Pro-Models/issues)
+
+---
+
+## 📚 Additional Documentation
+
+Having issues? Check these guides:
+- 🚨 **[LOCALHOST_FIX.md](LOCALHOST_FIX.md)** - Quick fix for "localhost refused to connect"
+- 🚀 **[QUICKSTART.md](QUICKSTART.md)** - Step-by-step setup guide
+- 🔧 **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Comprehensive troubleshooting
+- ✅ **[SUCCESS_INDICATORS.md](SUCCESS_INDICATORS.md)** - How to know if everything is working
+- 📖 **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Production deployment instructions
 
 ---
 
