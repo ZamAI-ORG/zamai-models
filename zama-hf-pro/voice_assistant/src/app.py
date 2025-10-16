@@ -2,11 +2,15 @@ import gradio as gr
 from api_client import HFInferenceClient
 import os
 import json
+from datetime import datetime
+import time
 
 class ZamAIVoiceAssistant:
     def __init__(self):
         token = os.getenv("HUGGINGFACE_TOKEN", "")
         self.hf_client = HFInferenceClient(token=token)
+        self.conversation_count = 0
+        self.start_time = datetime.now()
         
         # Load deployment config
         self.load_config()
@@ -32,9 +36,15 @@ class ZamAIVoiceAssistant:
             if audio is None:
                 return "Please record some audio first.", None
             
+            # Gradio returns audio as tuple (file_path, sample_rate) or just file_path
+            audio_file = audio if isinstance(audio, str) else audio[0] if isinstance(audio, tuple) else None
+            
+            if not audio_file:
+                return "Invalid audio format.", None
+            
             # Step 1: Speech to Text using Whisper Large v3
             stt_model = self.models["speech_to_text"]["primary"]
-            text = self.hf_client.stt_process(audio, model=stt_model)
+            text = self.hf_client.stt_process(audio_file, model=stt_model)
             
             if not text:
                 return "Could not understand the audio. Please try speaking more clearly.", None
@@ -74,36 +84,67 @@ ZamAI:"""
             print(error_msg)
             return error_msg, None
     
-    def chat_text(self, message, history):
-        """Text-based chat interface"""
+    def chat_text(self, message, history, temperature, max_tokens):
+        """Text-based chat interface with customizable parameters"""
         try:
+            if not message or not message.strip():
+                return history, self.get_stats()
+                
             llm_model = self.models["text_generation"]["primary"]
             
-            # Build conversation context
+            # Build conversation context from messages format
             context = ""
-            for user_msg, bot_msg in history:
-                context += f"User: {user_msg}\nZamAI: {bot_msg}\n"
+            for msg in history:
+                if msg.get("role") == "user":
+                    context += f"User: {msg.get('content', '')}\n"
+                elif msg.get("role") == "assistant":
+                    context += f"ZamAI: {msg.get('content', '')}\n"
             
             prompt = f"""You are ZamAI, an AI assistant for Afghanistan. Respond helpfully in the user's language.
 
 {context}User: {message}
 ZamAI:"""
             
+            start_time = time.time()
             response = self.hf_client.generate_text(
                 prompt=prompt,
                 model=llm_model,
-                max_length=300,
-                temperature=0.7
+                max_length=int(max_tokens),
+                temperature=float(temperature)
             )
+            response_time = time.time() - start_time
             
             # Clean up response
             if "ZamAI:" in response:
                 response = response.split("ZamAI:")[-1].strip()
             
-            return response
+            # Add response time info
+            response += f"\n\n_⏱️ Response time: {response_time:.2f}s_"
+            
+            # Return updated history in messages format
+            history.append({"role": "user", "content": message})
+            history.append({"role": "assistant", "content": response})
+            self.conversation_count += 1
+            
+            return history, self.get_stats()
             
         except Exception as e:
-            return f"Error: {str(e)}"
+            error_msg = f"❌ Error: {str(e)}"
+            history.append({"role": "user", "content": message})
+            history.append({"role": "assistant", "content": error_msg})
+            return history, self.get_stats()
+    
+    def clear_chat(self):
+        """Clear chat history"""
+        return [], self.get_stats()
+    
+    def get_stats(self):
+        """Get conversation statistics"""
+        uptime = datetime.now() - self.start_time
+        return f"""📊 **Session Stats:**
+- Conversations: {self.conversation_count}
+- Uptime: {str(uptime).split('.')[0]}
+- Model: {self.models.get('text_generation', {}).get('primary', 'N/A')}"""
     
     def get_model_info(self):
         """Get information about loaded models"""
