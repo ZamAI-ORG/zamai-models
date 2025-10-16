@@ -1,4 +1,3 @@
-from transformers import AutoTokenizer, AutoModelForCausalLM
 import requests
 import os
 
@@ -51,23 +50,3 @@ class ZamAITutorInference:
                 
         except Exception as e:
             return f"خطا: {str(e)}"
-            device_map="auto"
-        )
-    
-    def generate_response(self, question):
-        """Generate educational response"""
-        prompt = f"Q: {question}\nA:"
-        
-        inputs = self.tokenizer(prompt, return_tensors="pt")
-        
-        with torch.no_grad():
-            outputs = self.model.generate(
-                **inputs,
-                max_new_tokens=150,
-                temperature=0.7,
-                do_sample=True,
-                pad_token_id=self.tokenizer.eos_token_id
-            )
-        
-        response = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
-        return response.split("A:")[-1].strip()
