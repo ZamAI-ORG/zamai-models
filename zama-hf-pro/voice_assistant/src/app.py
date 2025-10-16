@@ -158,7 +158,7 @@ with gr.Blocks(title="🇦🇫 ZamAI Pro Voice Assistant", theme=gr.themes.Soft(
     with gr.Tab("💬 Text Chat"):
         gr.Markdown("### Chat directly with text")
         
-        chatbot = gr.Chatbot(label="ZamAI Conversation", height=400)
+        chatbot = gr.Chatbot(label="ZamAI Conversation", height=400, type='messages')
         msg = gr.Textbox(
             label="Your message",
             placeholder="Type your message here...",
@@ -181,11 +181,6 @@ with gr.Blocks(title="🇦🇫 ZamAI Pro Voice Assistant", theme=gr.themes.Soft(
             fn=assistant.get_model_info,
             outputs=[model_info]
         )
-
-# Health check endpoint
-@demo.api()
-def health():
-    return {"status": "healthy", "models_loaded": True}
 
 if __name__ == "__main__":
     port = int(os.getenv("GRADIO_SERVER_PORT", 7860))
