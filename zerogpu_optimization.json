@@ -1,0 +1,28 @@
+{
+  "current_zerogpu_count": 13,
+  "zerogpu_limit": 10,
+  "available_slots": 0,
+  "essential_spaces": [
+    "tasal9/pashto-base-bloom-testing"
+  ],
+  "optional_spaces": [
+    "tasal9/zamai-bloom-pashto",
+    "tasal9/zamai-embeddings-multilingual",
+    "tasal9/zamai-llama3-pashto",
+    "tasal9/zamai-mistral-pashto",
+    "tasal9/zamai-phi3-pashto",
+    "tasal9/zamai-whisper-pashto",
+    "tasal9/zamai-pashto-bloom",
+    "tasal9/zamai-phi3-business",
+    "tasal9/zamai-whisper-speech",
+    "tasal9/zamai-embeddings",
+    "tasal9/zamai-training-hub",
+    "tasal9/zamai-whisper-speech-robust"
+  ],
+  "recommendations": [
+    "Move 4 optional spaces to CPU hardware",
+    "Prioritize creating testing spaces for main models",
+    "Create 1-2 consolidated training spaces instead of individual ones",
+    "Consider creating multi-model demo spaces"
+  ]
+}

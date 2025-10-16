@@ -51,7 +51,7 @@ For each model, go to https://huggingface.co/new-space and:
 3. **Hardware**: ZeroGPU - A10G
 4. **Visibility**: Public
 
-### Step 2: Upload Files
+### Step 2: Upload Filesi
 Upload the 3 files from each `zerogpu_files/[model-name]/` folder:
 - `app.py`
 - `requirements.txt` 

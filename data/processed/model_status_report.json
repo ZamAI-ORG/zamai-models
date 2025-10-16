@@ -1,0 +1,33 @@
+{
+  "analysis_date": "2025-07-09 18:48:18.257702",
+  "total_target_models": 11,
+  "existing_models": 6,
+  "missing_models": 11,
+  "existing_model_list": [
+    "tasal9/pashto-base-bloom",
+    "tasal9/ZamAI-LIama3-Pashto",
+    "tasal9/Multilingual-ZamAI-Embeddings",
+    "tasal9/ZamAI-Mistral-7B-Pashto",
+    "tasal9/ZamAI-Phi-3-Mini-Pashto",
+    "tasal9/ZamAI-Whisper-v3-Pashto"
+  ],
+  "missing_model_list": [
+    "tasal9/zamai-pashto-chat-8b",
+    "tasal9/zamai-translator-pashto-en",
+    "tasal9/zamai-qa-pashto",
+    "tasal9/zamai-sentiment-pashto",
+    "tasal9/zamai-dialogpt-pashto-v3",
+    "tasal9/ZamAI-Voice-Assistant",
+    "tasal9/ZamAI-Tutor-Bot",
+    "tasal9/ZamAI-Business-Automation",
+    "tasal9/ZamAI-Embeddings",
+    "tasal9/ZamAI-STT-Processor",
+    "tasal9/ZamAI-TTS-Generator"
+  ],
+  "next_actions": [
+    "Create missing models using create_all_models.py",
+    "Fix unhealthy models if any",
+    "Train models without weights",
+    "Create demo spaces for all models"
+  ]
+}

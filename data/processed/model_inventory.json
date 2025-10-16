@@ -1,6 +1,6 @@
 {
   "username": "tasal9",
-  "total_models": 5,
+  "total_models": 6,
   "categories": {
     "chat": [],
     "translation": [],
@@ -11,14 +11,16 @@
       "tasal9/pashto-base-bloom",
       "tasal9/ZamAI-LIama3-Pashto",
       "tasal9/Multilingual-ZamAI-Embeddings",
-      "tasal9/ZamAI-Mistral-7B-Pashto"
+      "tasal9/ZamAI-Mistral-7B-Pashto",
+      "tasal9/ZamAI-Phi-3-Mini-Pashto",
+      "tasal9/ZamAI-Whisper-v3-Pashto"
     ]
   },
   "models": [
     {
       "id": "tasal9/pashto-base-bloom",
       "created_at": "2025-06-14 00:15:53+00:00",
-      "downloads": 21,
+      "downloads": 39,
       "likes": 0
     },
     {
@@ -30,12 +32,24 @@
     {
       "id": "tasal9/Multilingual-ZamAI-Embeddings",
       "created_at": "2025-06-21 11:55:14+00:00",
-      "downloads": 0,
+      "downloads": 28,
       "likes": 0
     },
     {
       "id": "tasal9/ZamAI-Mistral-7B-Pashto",
       "created_at": "2025-06-24 13:27:50+00:00",
+      "downloads": 0,
+      "likes": 0
+    },
+    {
+      "id": "tasal9/ZamAI-Phi-3-Mini-Pashto",
+      "created_at": "2025-06-30 16:56:44+00:00",
+      "downloads": 0,
+      "likes": 0
+    },
+    {
+      "id": "tasal9/ZamAI-Whisper-v3-Pashto",
+      "created_at": "2025-07-01 04:34:31+00:00",
       "downloads": 0,
       "likes": 0
     }

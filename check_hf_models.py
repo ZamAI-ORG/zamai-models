@@ -9,7 +9,7 @@ import json
 
 def check_hf_models():
     # Read the token
-    with open('/workspaces/ZamAI-App/huggingface-models/HF-Token.txt', 'r') as f:
+    with open('/workspaces/ZamAI-Pro-Models/HF-Token.txt', 'r') as f:
         token = f.read().strip()
     
     # Initialize HF API
@@ -88,7 +88,7 @@ def check_hf_models():
             ]
         }
         
-        with open('/workspaces/ZamAI-App/huggingface-models/model_inventory.json', 'w') as f:
+        with open('/workspaces/ZamAI-Pro-Models/data/processed/model_inventory.json', 'w') as f:
             json.dump(inventory, f, indent=2, ensure_ascii=False)
         
         print("\n📋 Model Categories:")

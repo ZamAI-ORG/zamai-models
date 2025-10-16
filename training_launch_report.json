@@ -1,0 +1,58 @@
+{
+  "launch_time": "2025-07-10 12:43:32",
+  "total_spaces": 4,
+  "spaces": [
+    {
+      "space_id": "tasal9/zamai-auto-trainer-zamai-ultimate-llama3-v1",
+      "config": {
+        "name": "zamai-ultimate-llama3-v1",
+        "base_model": "meta-llama/Llama-3.1-8B-Instruct",
+        "dataset": "tasal9/ZamAI-Pashto-High-Qualituly-Dataset",
+        "epochs": 3,
+        "learning_rate": 0.0002,
+        "lora_rank": 16,
+        "priority": "HIGH"
+      },
+      "url": "https://huggingface.co/spaces/tasal9/zamai-auto-trainer-zamai-ultimate-llama3-v1"
+    },
+    {
+      "space_id": "tasal9/zamai-auto-trainer-zamai-mistral-chat-v1",
+      "config": {
+        "name": "zamai-mistral-chat-v1",
+        "base_model": "mistralai/Mistral-7B-Instruct-v0.2",
+        "dataset": "tasal9/ZamAI_Pashto_Dataset",
+        "epochs": 3,
+        "learning_rate": 0.0002,
+        "lora_rank": 16,
+        "priority": "HIGH"
+      },
+      "url": "https://huggingface.co/spaces/tasal9/zamai-auto-trainer-zamai-mistral-chat-v1"
+    },
+    {
+      "space_id": "tasal9/zamai-auto-trainer-zamai-phi3-business-v1",
+      "config": {
+        "name": "zamai-phi3-business-v1",
+        "base_model": "microsoft/phi-3-mini-4k-instruct",
+        "dataset": "tasal9/ZamAI-Pashto-Dataset-Cleaned",
+        "epochs": 4,
+        "learning_rate": 0.0001,
+        "lora_rank": 24,
+        "priority": "MEDIUM"
+      },
+      "url": "https://huggingface.co/spaces/tasal9/zamai-auto-trainer-zamai-phi3-business-v1"
+    },
+    {
+      "space_id": "tasal9/zamai-auto-trainer-zamai-dialogpt-conversational-v1",
+      "config": {
+        "name": "zamai-dialogpt-conversational-v1",
+        "base_model": "microsoft/DialoGPT-medium",
+        "dataset": "tasal9/Pashto_Dataset",
+        "epochs": 5,
+        "learning_rate": 0.0003,
+        "lora_rank": 12,
+        "priority": "MEDIUM"
+      },
+      "url": "https://huggingface.co/spaces/tasal9/zamai-auto-trainer-zamai-dialogpt-conversational-v1"
+    }
+  ]
+}
