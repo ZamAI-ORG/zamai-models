@@ -180,8 +180,3 @@ class HFInferenceClient:
                 "status": "error",
                 "error": str(e)
             }
-        
-        if response.status_code == 200:
-            return response.content
-        else:
-            raise Exception(f"TTS Error: {response.status_code}")
