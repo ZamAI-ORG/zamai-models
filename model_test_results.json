@@ -1,0 +1,203 @@
+{
+  "timestamp": "2025-10-19T11:49:48.093018",
+  "results": [
+    {
+      "model_id": "tasal9/pashto-base-bloom",
+      "pipeline_tag": "text-generation",
+      "test_timestamp": "2025-10-19T11:49:46.896907",
+      "tests": [
+        {
+          "prompt": "\u0633\u0644\u0627\u0645\u060c \u062a\u0627\u0633\u0648 \u0685\u0646\u06ab\u0647 \u06cc\u0627\u0633\u062a\u061f",
+          "error": "",
+          "status": "failed"
+        },
+        {
+          "prompt": "\u062f \u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646 \u067e\u0627\u06cc\u062a\u062e\u062a \u0685\u0647 \u062f\u06cc\u061f",
+          "error": "",
+          "status": "failed"
+        },
+        {
+          "prompt": "Hello, can you help me?",
+          "error": "",
+          "status": "failed"
+        }
+      ],
+      "success_rate": "0/3",
+      "overall_status": "failed"
+    },
+    {
+      "model_id": "tasal9/ZamAI-LIama3-Pashto",
+      "pipeline_tag": "text-generation",
+      "test_timestamp": "2025-10-19T11:49:47.129801",
+      "tests": [
+        {
+          "prompt": "\u0633\u0644\u0627\u0645\u060c \u062a\u0627\u0633\u0648 \u0685\u0646\u06ab\u0647 \u06cc\u0627\u0633\u062a\u061f",
+          "error": "",
+          "status": "failed"
+        },
+        {
+          "prompt": "\u062f \u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646 \u067e\u0627\u06cc\u062a\u062e\u062a \u0685\u0647 \u062f\u06cc\u061f",
+          "error": "",
+          "status": "failed"
+        },
+        {
+          "prompt": "Hello, can you help me?",
+          "error": "",
+          "status": "failed"
+        }
+      ],
+      "success_rate": "0/3",
+      "overall_status": "failed"
+    },
+    {
+      "model_id": "tasal9/Multilingual-ZamAI-Embeddings",
+      "pipeline_tag": "sentence-similarity",
+      "test_timestamp": "2025-10-19T11:49:47.362981",
+      "tests": [
+        {
+          "text": "\u062f \u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646 \u069a\u06a9\u0644\u06cc \u0645\u0644\u06a9 \u062f\u06cc",
+          "error": "",
+          "status": "failed"
+        },
+        {
+          "text": "Hello, this is a test",
+          "error": "",
+          "status": "failed"
+        },
+        {
+          "text": "Machine learning is amazing",
+          "error": "",
+          "status": "failed"
+        }
+      ],
+      "success_rate": "0/3",
+      "overall_status": "failed"
+    },
+    {
+      "model_id": "tasal9/ZamAI-Mistral-7B-Pashto",
+      "pipeline_tag": "text-generation",
+      "test_timestamp": "2025-10-19T11:49:47.601535",
+      "tests": [
+        {
+          "prompt": "\u0633\u0644\u0627\u0645\u060c \u062a\u0627\u0633\u0648 \u0685\u0646\u06ab\u0647 \u06cc\u0627\u0633\u062a\u061f",
+          "error": "",
+          "status": "failed"
+        },
+        {
+          "prompt": "\u062f \u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646 \u067e\u0627\u06cc\u062a\u062e\u062a \u0685\u0647 \u062f\u06cc\u061f",
+          "error": "",
+          "status": "failed"
+        },
+        {
+          "prompt": "Hello, can you help me?",
+          "error": "",
+          "status": "failed"
+        }
+      ],
+      "success_rate": "0/3",
+      "overall_status": "failed"
+    },
+    {
+      "model_id": "tasal9/ZamAI-Phi-3-Mini-Pashto",
+      "pipeline_tag": "text-generation",
+      "test_timestamp": "2025-10-19T11:49:47.854095",
+      "tests": [
+        {
+          "prompt": "\u0633\u0644\u0627\u0645\u060c \u062a\u0627\u0633\u0648 \u0685\u0646\u06ab\u0647 \u06cc\u0627\u0633\u062a\u061f",
+          "error": "",
+          "status": "failed"
+        },
+        {
+          "prompt": "\u062f \u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646 \u067e\u0627\u06cc\u062a\u062e\u062a \u0685\u0647 \u062f\u06cc\u061f",
+          "error": "",
+          "status": "failed"
+        },
+        {
+          "prompt": "Hello, can you help me?",
+          "error": "",
+          "status": "failed"
+        }
+      ],
+      "success_rate": "0/3",
+      "overall_status": "failed"
+    },
+    {
+      "model_id": "tasal9/ZamAI-Whisper-v3-Pashto",
+      "pipeline_tag": "automatic-speech-recognition",
+      "test_timestamp": "2025-10-19T11:49:48.092792",
+      "tests": [
+        {
+          "status": "skipped",
+          "reason": "Audio testing requires sample files"
+        }
+      ],
+      "success_rate": "0/1",
+      "overall_status": "failed"
+    },
+    {
+      "model_id": "tasal9/ZamAI-Pashto-Translator-FacebookNLB-ps-en",
+      "pipeline_tag": "translation",
+      "test_timestamp": "2025-10-19T11:49:48.092812",
+      "tests": [
+        {
+          "status": "skipped",
+          "reason": "Unsupported pipeline: translation"
+        }
+      ],
+      "success_rate": "0/1",
+      "overall_status": "failed"
+    },
+    {
+      "model_id": "tasal9/ZamAI-QA-Pashto",
+      "pipeline_tag": "question-answering",
+      "test_timestamp": "2025-10-19T11:49:48.092821",
+      "tests": [
+        {
+          "status": "skipped",
+          "reason": "Unsupported pipeline: question-answering"
+        }
+      ],
+      "success_rate": "0/1",
+      "overall_status": "failed"
+    },
+    {
+      "model_id": "tasal9/ZamAI-Sentiment-Pashto",
+      "pipeline_tag": "text-classification",
+      "test_timestamp": "2025-10-19T11:49:48.092828",
+      "tests": [
+        {
+          "status": "skipped",
+          "reason": "Unsupported pipeline: text-classification"
+        }
+      ],
+      "success_rate": "0/1",
+      "overall_status": "failed"
+    },
+    {
+      "model_id": "tasal9/ZamAI-Facebook-XLM-Pashto",
+      "pipeline_tag": null,
+      "test_timestamp": "2025-10-19T11:49:48.092838",
+      "tests": [
+        {
+          "status": "skipped",
+          "reason": "Unsupported pipeline: None"
+        }
+      ],
+      "success_rate": "0/1",
+      "overall_status": "failed"
+    },
+    {
+      "model_id": "tasal9/ZamAI-mT5-Pashto",
+      "pipeline_tag": null,
+      "test_timestamp": "2025-10-19T11:49:48.092846",
+      "tests": [
+        {
+          "status": "skipped",
+          "reason": "Unsupported pipeline: None"
+        }
+      ],
+      "success_rate": "0/1",
+      "overall_status": "failed"
+    }
+  ]
+}
