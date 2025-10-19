@@ -5,7 +5,7 @@ Update all HuggingFace Spaces with ZeroGPU support and improvements
 
 import os
 from pathlib import Path
-from huggingface_hub import HfApi, upload_file
+from huggingface_hub import HfApi
 import tempfile
 
 def read_hf_token():
@@ -200,7 +200,7 @@ def update_space_readme(api, space_id):
             os.unlink(tmp_path)
             print(f"   ✅ Updated README.md")
     
-    except Exception as e:
+    except Exception:
         # README might not exist, that's okay
         pass
 
