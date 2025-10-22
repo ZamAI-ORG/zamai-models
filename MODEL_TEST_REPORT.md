@@ -1,5 +1,5 @@
 # 🧪 ZamAI Models Test Report
-**Generated**: 2025-10-19 11:49:48
+**Generated**: 2025-10-22 18:25:02
 
 ## 📊 Summary
 
@@ -18,7 +18,7 @@
 - **Pipeline**: text-generation
 - **Status**: FAILED
 - **Success Rate**: 0/3
-- **Tested**: 2025-10-19T11:49:46.896907
+- **Tested**: 2025-10-22T18:25:01.464987
 
 **Test Details:**
 
@@ -33,7 +33,7 @@
 - **Pipeline**: text-generation
 - **Status**: FAILED
 - **Success Rate**: 0/3
-- **Tested**: 2025-10-19T11:49:47.129801
+- **Tested**: 2025-10-22T18:25:01.670529
 
 **Test Details:**
 
@@ -48,7 +48,7 @@
 - **Pipeline**: sentence-similarity
 - **Status**: FAILED
 - **Success Rate**: 0/3
-- **Tested**: 2025-10-19T11:49:47.362981
+- **Tested**: 2025-10-22T18:25:01.875043
 
 **Test Details:**
 
@@ -63,7 +63,7 @@
 - **Pipeline**: text-generation
 - **Status**: FAILED
 - **Success Rate**: 0/3
-- **Tested**: 2025-10-19T11:49:47.601535
+- **Tested**: 2025-10-22T18:25:02.082147
 
 **Test Details:**
 
@@ -78,7 +78,7 @@
 - **Pipeline**: text-generation
 - **Status**: FAILED
 - **Success Rate**: 0/3
-- **Tested**: 2025-10-19T11:49:47.854095
+- **Tested**: 2025-10-22T18:25:02.287175
 
 **Test Details:**
 
@@ -93,7 +93,7 @@
 - **Pipeline**: automatic-speech-recognition
 - **Status**: FAILED
 - **Success Rate**: 0/1
-- **Tested**: 2025-10-19T11:49:48.092792
+- **Tested**: 2025-10-22T18:25:02.534653
 
 **Test Details:**
 
@@ -106,7 +106,7 @@
 - **Pipeline**: translation
 - **Status**: FAILED
 - **Success Rate**: 0/1
-- **Tested**: 2025-10-19T11:49:48.092812
+- **Tested**: 2025-10-22T18:25:02.534720
 
 **Test Details:**
 
@@ -119,7 +119,7 @@
 - **Pipeline**: question-answering
 - **Status**: FAILED
 - **Success Rate**: 0/1
-- **Tested**: 2025-10-19T11:49:48.092821
+- **Tested**: 2025-10-22T18:25:02.534762
 
 **Test Details:**
 
@@ -132,7 +132,7 @@
 - **Pipeline**: text-classification
 - **Status**: FAILED
 - **Success Rate**: 0/1
-- **Tested**: 2025-10-19T11:49:48.092828
+- **Tested**: 2025-10-22T18:25:02.534805
 
 **Test Details:**
 
@@ -145,7 +145,7 @@
 - **Pipeline**: None
 - **Status**: FAILED
 - **Success Rate**: 0/1
-- **Tested**: 2025-10-19T11:49:48.092838
+- **Tested**: 2025-10-22T18:25:02.534854
 
 **Test Details:**
 
@@ -158,7 +158,7 @@
 - **Pipeline**: None
 - **Status**: FAILED
 - **Success Rate**: 0/1
-- **Tested**: 2025-10-19T11:49:48.092846
+- **Tested**: 2025-10-22T18:25:02.534940
 
 **Test Details:**
 

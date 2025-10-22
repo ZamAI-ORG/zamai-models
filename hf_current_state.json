@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-19T11:48:56.678348",
+  "timestamp": "2025-10-22T18:24:58.364509",
   "models": [
     {
       "id": "tasal9/pashto-base-bloom",
@@ -64,7 +64,7 @@
       "id": "tasal9/Multilingual-ZamAI-Embeddings",
       "created_at": "2025-06-21 11:55:14+00:00",
       "last_modified": "2025-07-21 20:11:33+00:00",
-      "downloads": 15,
+      "downloads": 16,
       "likes": 0,
       "tags": [
         "sentence-transformers",
@@ -220,7 +220,7 @@
       "id": "tasal9/ZamAI-Pashto-Translator-FacebookNLB-ps-en",
       "created_at": "2025-07-09 18:49:16+00:00",
       "last_modified": "2025-07-09 18:49:23+00:00",
-      "downloads": 27,
+      "downloads": 41,
       "likes": 0,
       "tags": [
         "transformers",
@@ -311,8 +311,8 @@
     {
       "id": "tasal9/ZamAI-mT5-Pashto",
       "created_at": "2025-08-13 14:43:50+00:00",
-      "last_modified": "2025-10-17 16:52:58+00:00",
-      "downloads": 265,
+      "last_modified": "2025-10-19 12:12:17+00:00",
+      "downloads": 271,
       "likes": 0,
       "tags": [
         "safetensors",
@@ -331,7 +331,7 @@
     {
       "id": "tasal9/pashto-base-bloom-space",
       "created_at": "2025-07-10 21:12:35+00:00",
-      "last_modified": "2025-07-18 13:09:36+00:00",
+      "last_modified": "2025-10-22 14:38:01+00:00",
       "likes": 0,
       "sdk": "gradio",
       "runtime": "RUNTIME_ERROR",
@@ -340,7 +340,7 @@
     {
       "id": "tasal9/ZamAI-Mistral-7B-Pashto-space",
       "created_at": "2025-07-10 21:12:54+00:00",
-      "last_modified": "2025-07-12 22:06:52+00:00",
+      "last_modified": "2025-10-19 11:49:30+00:00",
       "likes": 0,
       "sdk": "gradio",
       "runtime": "RUNTIME_ERROR",
@@ -349,7 +349,7 @@
     {
       "id": "tasal9/ZamAI-Pashto-Translator-FacebookNLB-ps-en",
       "created_at": "2025-08-04 20:11:29+00:00",
-      "last_modified": "2025-08-11 19:58:22+00:00",
+      "last_modified": "2025-10-19 11:49:36+00:00",
       "likes": 0,
       "sdk": "gradio",
       "runtime": "RUNTIME_ERROR",
@@ -358,7 +358,7 @@
     {
       "id": "tasal9/ZamAI-mt5-Pashto-training-Space",
       "created_at": "2025-08-10 17:29:28+00:00",
-      "last_modified": "2025-10-17 16:32:53+00:00",
+      "last_modified": "2025-10-19 11:49:40+00:00",
       "likes": 0,
       "sdk": "gradio",
       "runtime": "RUNTIME_ERROR",
@@ -367,19 +367,19 @@
     {
       "id": "tasal9/ZamAI-mt5-Pashto-Demo",
       "created_at": "2025-08-13 16:26:42+00:00",
-      "last_modified": "2025-10-03 17:27:09+00:00",
+      "last_modified": "2025-10-19 11:49:42+00:00",
       "likes": 0,
       "sdk": "gradio",
-      "runtime": "RUNNING",
-      "hardware": "cpu-basic"
+      "runtime": "SLEEPING",
+      "hardware": null
     },
     {
       "id": "tasal9/ZamAI-Phi3-Mini-Pashto-Demo",
       "created_at": "2025-08-25 00:37:02+00:00",
-      "last_modified": "2025-09-04 20:59:59+00:00",
+      "last_modified": "2025-10-19 16:21:51+00:00",
       "likes": 0,
-      "sdk": null,
-      "runtime": "CONFIG_ERROR",
+      "sdk": "gradio",
+      "runtime": "RUNTIME_ERROR",
       "hardware": null
     },
     {
@@ -395,7 +395,7 @@
   "summary": {
     "total_models": 11,
     "total_spaces": 7,
-    "total_downloads": 333,
+    "total_downloads": 354,
     "total_likes": 1
   }
 }

@@ -1,11 +1,11 @@
 # 🤗 ZamAI HuggingFace Status Report
-**Generated**: 2025-10-19 11:48:56
+**Generated**: 2025-10-22 18:24:58
 
 ## 📊 Summary
 
 - **Total Models**: 11
 - **Total Spaces**: 7
-- **Total Downloads**: 333
+- **Total Downloads**: 354
 - **Total Likes**: 1
 
 ---
@@ -15,17 +15,17 @@
 ### tasal9/ZamAI-mT5-Pashto
 - **Pipeline**: None
 - **Library**: None
-- **Downloads**: 265 📥
+- **Downloads**: 271 📥
 - **Likes**: 0 ❤️
 - **Created**: 2025-08-13 14:43:50+00:00
-- **Last Modified**: 2025-10-17 16:52:58+00:00
+- **Last Modified**: 2025-10-19 12:12:17+00:00
 - **Tags**: safetensors, mt5, generated_from_trainer, base_model:google/mt5-base, base_model:finetune:google/mt5-base
 - **URL**: https://huggingface.co/tasal9/ZamAI-mT5-Pashto
 
 ### tasal9/ZamAI-Pashto-Translator-FacebookNLB-ps-en
 - **Pipeline**: translation
 - **Library**: transformers
-- **Downloads**: 27 📥
+- **Downloads**: 41 📥
 - **Likes**: 0 ❤️
 - **Created**: 2025-07-09 18:49:16+00:00
 - **Last Modified**: 2025-07-09 18:49:23+00:00
@@ -35,7 +35,7 @@
 ### tasal9/Multilingual-ZamAI-Embeddings
 - **Pipeline**: sentence-similarity
 - **Library**: sentence-transformers
-- **Downloads**: 15 📥
+- **Downloads**: 16 📥
 - **Likes**: 0 ❤️
 - **Created**: 2025-06-21 11:55:14+00:00
 - **Last Modified**: 2025-07-21 20:11:33+00:00
@@ -132,7 +132,7 @@
 - **Runtime**: RUNTIME_ERROR
 - **Likes**: 0 ❤️
 - **Created**: 2025-07-10 21:12:35+00:00
-- **Last Modified**: 2025-07-18 13:09:36+00:00
+- **Last Modified**: 2025-10-22 14:38:01+00:00
 - **URL**: https://huggingface.co/spaces/tasal9/pashto-base-bloom-space
 
 ### tasal9/ZamAI-Mistral-7B-Pashto-space
@@ -141,7 +141,7 @@
 - **Runtime**: RUNTIME_ERROR
 - **Likes**: 0 ❤️
 - **Created**: 2025-07-10 21:12:54+00:00
-- **Last Modified**: 2025-07-12 22:06:52+00:00
+- **Last Modified**: 2025-10-19 11:49:30+00:00
 - **URL**: https://huggingface.co/spaces/tasal9/ZamAI-Mistral-7B-Pashto-space
 
 ### tasal9/ZamAI-Pashto-Translator-FacebookNLB-ps-en
@@ -150,7 +150,7 @@
 - **Runtime**: RUNTIME_ERROR
 - **Likes**: 0 ❤️
 - **Created**: 2025-08-04 20:11:29+00:00
-- **Last Modified**: 2025-08-11 19:58:22+00:00
+- **Last Modified**: 2025-10-19 11:49:36+00:00
 - **URL**: https://huggingface.co/spaces/tasal9/ZamAI-Pashto-Translator-FacebookNLB-ps-en
 
 ### tasal9/ZamAI-mt5-Pashto-training-Space
@@ -159,25 +159,25 @@
 - **Runtime**: RUNTIME_ERROR
 - **Likes**: 0 ❤️
 - **Created**: 2025-08-10 17:29:28+00:00
-- **Last Modified**: 2025-10-17 16:32:53+00:00
+- **Last Modified**: 2025-10-19 11:49:40+00:00
 - **URL**: https://huggingface.co/spaces/tasal9/ZamAI-mt5-Pashto-training-Space
 
 ### tasal9/ZamAI-mt5-Pashto-Demo
 - **SDK**: gradio
-- **Hardware**: cpu-basic
-- **Runtime**: RUNNING
+- **Hardware**: None
+- **Runtime**: SLEEPING
 - **Likes**: 0 ❤️
 - **Created**: 2025-08-13 16:26:42+00:00
-- **Last Modified**: 2025-10-03 17:27:09+00:00
+- **Last Modified**: 2025-10-19 11:49:42+00:00
 - **URL**: https://huggingface.co/spaces/tasal9/ZamAI-mt5-Pashto-Demo
 
 ### tasal9/ZamAI-Phi3-Mini-Pashto-Demo
-- **SDK**: None
+- **SDK**: gradio
 - **Hardware**: None
-- **Runtime**: CONFIG_ERROR
+- **Runtime**: RUNTIME_ERROR
 - **Likes**: 0 ❤️
 - **Created**: 2025-08-25 00:37:02+00:00
-- **Last Modified**: 2025-09-04 20:59:59+00:00
+- **Last Modified**: 2025-10-19 16:21:51+00:00
 - **URL**: https://huggingface.co/spaces/tasal9/ZamAI-Phi3-Mini-Pashto-Demo
 
 ### tasal9/ZamAI-Phi3-Mini-Pashto-Training-Space

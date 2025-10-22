@@ -4,11 +4,11 @@
   },
   "files": {
     "HF-Token.txt": true,
-    "fine-tuning/train_pashto_chat.py": true,
-    "fine-tuning/configs/pashto_chat_config.json": true,
-    "train_zamai_v4.py": true,
-    "analyze_zamai_dataset.py": true,
-    "test_models.py": true
+    "scripts/training/train_pashto_chat.py": true,
+    "configs/pashto_chat_config.json": true,
+    "scripts/training/train_zamai_v4.py": true,
+    "scripts/analysis/analyze_zamai_dataset.py": true,
+    "scripts/testing/test_models.py": true
   },
   "config": {
     "base_model": "meta-llama/Llama-3.1-8B-Instruct",

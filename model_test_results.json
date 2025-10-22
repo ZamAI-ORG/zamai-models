@@ -1,10 +1,10 @@
 {
-  "timestamp": "2025-10-19T11:49:48.093018",
+  "timestamp": "2025-10-22T18:25:02.535225",
   "results": [
     {
       "model_id": "tasal9/pashto-base-bloom",
       "pipeline_tag": "text-generation",
-      "test_timestamp": "2025-10-19T11:49:46.896907",
+      "test_timestamp": "2025-10-22T18:25:01.464987",
       "tests": [
         {
           "prompt": "\u0633\u0644\u0627\u0645\u060c \u062a\u0627\u0633\u0648 \u0685\u0646\u06ab\u0647 \u06cc\u0627\u0633\u062a\u061f",
@@ -28,7 +28,7 @@
     {
       "model_id": "tasal9/ZamAI-LIama3-Pashto",
       "pipeline_tag": "text-generation",
-      "test_timestamp": "2025-10-19T11:49:47.129801",
+      "test_timestamp": "2025-10-22T18:25:01.670529",
       "tests": [
         {
           "prompt": "\u0633\u0644\u0627\u0645\u060c \u062a\u0627\u0633\u0648 \u0685\u0646\u06ab\u0647 \u06cc\u0627\u0633\u062a\u061f",
@@ -52,7 +52,7 @@
     {
       "model_id": "tasal9/Multilingual-ZamAI-Embeddings",
       "pipeline_tag": "sentence-similarity",
-      "test_timestamp": "2025-10-19T11:49:47.362981",
+      "test_timestamp": "2025-10-22T18:25:01.875043",
       "tests": [
         {
           "text": "\u062f \u0627\u0641\u063a\u0627\u0646\u0633\u062a\u0627\u0646 \u069a\u06a9\u0644\u06cc \u0645\u0644\u06a9 \u062f\u06cc",
@@ -76,7 +76,7 @@
     {
       "model_id": "tasal9/ZamAI-Mistral-7B-Pashto",
       "pipeline_tag": "text-generation",
-      "test_timestamp": "2025-10-19T11:49:47.601535",
+      "test_timestamp": "2025-10-22T18:25:02.082147",
       "tests": [
         {
           "prompt": "\u0633\u0644\u0627\u0645\u060c \u062a\u0627\u0633\u0648 \u0685\u0646\u06ab\u0647 \u06cc\u0627\u0633\u062a\u061f",
@@ -100,7 +100,7 @@
     {
       "model_id": "tasal9/ZamAI-Phi-3-Mini-Pashto",
       "pipeline_tag": "text-generation",
-      "test_timestamp": "2025-10-19T11:49:47.854095",
+      "test_timestamp": "2025-10-22T18:25:02.287175",
       "tests": [
         {
           "prompt": "\u0633\u0644\u0627\u0645\u060c \u062a\u0627\u0633\u0648 \u0685\u0646\u06ab\u0647 \u06cc\u0627\u0633\u062a\u061f",
@@ -124,7 +124,7 @@
     {
       "model_id": "tasal9/ZamAI-Whisper-v3-Pashto",
       "pipeline_tag": "automatic-speech-recognition",
-      "test_timestamp": "2025-10-19T11:49:48.092792",
+      "test_timestamp": "2025-10-22T18:25:02.534653",
       "tests": [
         {
           "status": "skipped",
@@ -137,7 +137,7 @@
     {
       "model_id": "tasal9/ZamAI-Pashto-Translator-FacebookNLB-ps-en",
       "pipeline_tag": "translation",
-      "test_timestamp": "2025-10-19T11:49:48.092812",
+      "test_timestamp": "2025-10-22T18:25:02.534720",
       "tests": [
         {
           "status": "skipped",
@@ -150,7 +150,7 @@
     {
       "model_id": "tasal9/ZamAI-QA-Pashto",
       "pipeline_tag": "question-answering",
-      "test_timestamp": "2025-10-19T11:49:48.092821",
+      "test_timestamp": "2025-10-22T18:25:02.534762",
       "tests": [
         {
           "status": "skipped",
@@ -163,7 +163,7 @@
     {
       "model_id": "tasal9/ZamAI-Sentiment-Pashto",
       "pipeline_tag": "text-classification",
-      "test_timestamp": "2025-10-19T11:49:48.092828",
+      "test_timestamp": "2025-10-22T18:25:02.534805",
       "tests": [
         {
           "status": "skipped",
@@ -176,7 +176,7 @@
     {
       "model_id": "tasal9/ZamAI-Facebook-XLM-Pashto",
       "pipeline_tag": null,
-      "test_timestamp": "2025-10-19T11:49:48.092838",
+      "test_timestamp": "2025-10-22T18:25:02.534854",
       "tests": [
         {
           "status": "skipped",
@@ -189,7 +189,7 @@
     {
       "model_id": "tasal9/ZamAI-mT5-Pashto",
       "pipeline_tag": null,
-      "test_timestamp": "2025-10-19T11:49:48.092846",
+      "test_timestamp": "2025-10-22T18:25:02.534940",
       "tests": [
         {
           "status": "skipped",
