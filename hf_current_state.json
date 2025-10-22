@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-22T18:24:58.364509",
+  "timestamp": "2025-10-22T18:28:29.398591",
   "models": [
     {
       "id": "tasal9/pashto-base-bloom",
@@ -367,28 +367,28 @@
     {
       "id": "tasal9/ZamAI-mt5-Pashto-Demo",
       "created_at": "2025-08-13 16:26:42+00:00",
-      "last_modified": "2025-10-19 11:49:42+00:00",
+      "last_modified": "2025-10-22 18:25:15+00:00",
       "likes": 0,
       "sdk": "gradio",
-      "runtime": "SLEEPING",
+      "runtime": "APP_STARTING",
       "hardware": null
     },
     {
       "id": "tasal9/ZamAI-Phi3-Mini-Pashto-Demo",
       "created_at": "2025-08-25 00:37:02+00:00",
-      "last_modified": "2025-10-19 16:21:51+00:00",
+      "last_modified": "2025-10-22 18:25:20+00:00",
       "likes": 0,
       "sdk": "gradio",
-      "runtime": "RUNTIME_ERROR",
+      "runtime": "APP_STARTING",
       "hardware": null
     },
     {
       "id": "tasal9/ZamAI-Phi3-Mini-Pashto-Training-Space",
       "created_at": "2025-08-25 02:45:40+00:00",
-      "last_modified": "2025-08-25 02:48:40+00:00",
+      "last_modified": "2025-10-22 18:25:26+00:00",
       "likes": 0,
       "sdk": "gradio",
-      "runtime": "SLEEPING",
+      "runtime": "APP_STARTING",
       "hardware": null
     }
   ],

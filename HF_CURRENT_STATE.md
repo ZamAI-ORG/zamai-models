@@ -1,5 +1,5 @@
 # 🤗 ZamAI HuggingFace Status Report
-**Generated**: 2025-10-22 18:24:58
+**Generated**: 2025-10-22 18:28:29
 
 ## 📊 Summary
 
@@ -165,28 +165,28 @@
 ### tasal9/ZamAI-mt5-Pashto-Demo
 - **SDK**: gradio
 - **Hardware**: None
-- **Runtime**: SLEEPING
+- **Runtime**: APP_STARTING
 - **Likes**: 0 ❤️
 - **Created**: 2025-08-13 16:26:42+00:00
-- **Last Modified**: 2025-10-19 11:49:42+00:00
+- **Last Modified**: 2025-10-22 18:25:15+00:00
 - **URL**: https://huggingface.co/spaces/tasal9/ZamAI-mt5-Pashto-Demo
 
 ### tasal9/ZamAI-Phi3-Mini-Pashto-Demo
 - **SDK**: gradio
 - **Hardware**: None
-- **Runtime**: RUNTIME_ERROR
+- **Runtime**: APP_STARTING
 - **Likes**: 0 ❤️
 - **Created**: 2025-08-25 00:37:02+00:00
-- **Last Modified**: 2025-10-19 16:21:51+00:00
+- **Last Modified**: 2025-10-22 18:25:20+00:00
 - **URL**: https://huggingface.co/spaces/tasal9/ZamAI-Phi3-Mini-Pashto-Demo
 
 ### tasal9/ZamAI-Phi3-Mini-Pashto-Training-Space
 - **SDK**: gradio
 - **Hardware**: None
-- **Runtime**: SLEEPING
+- **Runtime**: APP_STARTING
 - **Likes**: 0 ❤️
 - **Created**: 2025-08-25 02:45:40+00:00
-- **Last Modified**: 2025-08-25 02:48:40+00:00
+- **Last Modified**: 2025-10-22 18:25:26+00:00
 - **URL**: https://huggingface.co/spaces/tasal9/ZamAI-Phi3-Mini-Pashto-Training-Space
 
 ---
