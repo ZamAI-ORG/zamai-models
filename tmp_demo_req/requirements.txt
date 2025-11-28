@@ -1,0 +1,8 @@
+gradio>=4.44.0
+transformers>=4.42.4
+torch
+sentencepiece
+huggingface_hub
+huggingface-hub
+
+spaces

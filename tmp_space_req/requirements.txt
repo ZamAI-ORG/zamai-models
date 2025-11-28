@@ -1,0 +1,9 @@
+transformers==4.42.4
+datasets==2.20.0
+sentencepiece
+accelerate
+torch
+huggingface_hub
+gradio>=4.44.0,<5.0.0
+sacrebleu
+spaces
