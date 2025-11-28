@@ -44,7 +44,7 @@
     "sdk": "gradio",
     "hardware": "zero-gpu-a10g",
     "zerogpu_usage": true,
-    "runtime_status": "BUILDING",
+    "runtime_status": "RUNNING",
     "files": [
       ".gitattributes",
       "README.md",
@@ -64,7 +64,7 @@
     "sdk": "gradio",
     "hardware": "cpu-upgrade",
     "zerogpu_usage": false,
-    "runtime_status": "BUILDING",
+    "runtime_status": "APP_STARTING",
     "files": [
       ".env.template",
       ".gitattributes",
@@ -120,7 +120,7 @@
     "sdk": "gradio",
     "hardware": "unknown",
     "zerogpu_usage": false,
-    "runtime_status": "BUILDING",
+    "runtime_status": "APP_STARTING",
     "files": [
       ".gitignore",
       "README.md",
