@@ -80,7 +80,7 @@ def translate_text(text: str, direction: str) -> str:
     model, translation_tokenizer = cast(
         Tuple[AutoModelForSeq2SeqLM, PreTrainedTokenizerBase], load_model()
     )
-    inputs = translation_tokenizer(
+    inputs = translation_tokenizer(  # pylint: disable=not-callable
         _direction_prefix(direction) + text,
         return_tensors="pt",
         truncation=True,
