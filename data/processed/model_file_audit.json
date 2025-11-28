@@ -1,0 +1,133 @@
+{
+  "tasal9/pashto-base-bloom": {
+    "has_weights": true,
+    "has_tokenizer_files": true,
+    "has_readme": true,
+    "has_config": true,
+    "weight_files": [
+      "model.safetensors"
+    ],
+    "tokenizer_files": [
+      "tokenizer.json",
+      "tokenizer_config.json"
+    ]
+  },
+  "tasal9/ZamAI-LIama3-Pashto": {
+    "has_weights": true,
+    "has_tokenizer_files": true,
+    "has_readme": true,
+    "has_config": true,
+    "weight_files": [
+      "model-00001-of-00004.safetensors",
+      "model-00002-of-00004.safetensors",
+      "model-00003-of-00004.safetensors",
+      "model-00004-of-00004.safetensors"
+    ],
+    "tokenizer_files": [
+      "tokenizer.json",
+      "tokenizer_config.json"
+    ]
+  },
+  "tasal9/Multilingual-ZamAI-Embeddings": {
+    "has_weights": true,
+    "has_tokenizer_files": true,
+    "has_readme": true,
+    "has_config": true,
+    "weight_files": [
+      "model.safetensors",
+      "zamai-weights/model.safetensors"
+    ],
+    "tokenizer_files": [
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "zamai-weights/tokenizer.json",
+      "zamai-weights/tokenizer_config.json"
+    ]
+  },
+  "tasal9/ZamAI-Mistral-7B-Pashto": {
+    "has_weights": false,
+    "has_tokenizer_files": true,
+    "has_readme": true,
+    "has_config": true,
+    "weight_files": [],
+    "tokenizer_files": [
+      "tokenizer.json",
+      "tokenizer_config.json"
+    ]
+  },
+  "tasal9/ZamAI-Phi-3-Mini-Pashto": {
+    "has_weights": true,
+    "has_tokenizer_files": true,
+    "has_readme": true,
+    "has_config": true,
+    "weight_files": [
+      "model-00001-of-00003.safetensors",
+      "model-00002-of-00003.safetensors",
+      "model-00003-of-00003.safetensors"
+    ],
+    "tokenizer_files": [
+      "tokenizer.json",
+      "tokenizer_config.json"
+    ]
+  },
+  "tasal9/ZamAI-Whisper-v3-Pashto": {
+    "has_weights": false,
+    "has_tokenizer_files": false,
+    "has_readme": true,
+    "has_config": true,
+    "weight_files": [],
+    "tokenizer_files": []
+  },
+  "tasal9/ZamAI-Pashto-Translator-FacebookNLB-ps-en": {
+    "has_weights": false,
+    "has_tokenizer_files": false,
+    "has_readme": true,
+    "has_config": true,
+    "weight_files": [],
+    "tokenizer_files": []
+  },
+  "tasal9/ZamAI-QA-Pashto": {
+    "has_weights": false,
+    "has_tokenizer_files": false,
+    "has_readme": true,
+    "has_config": true,
+    "weight_files": [],
+    "tokenizer_files": []
+  },
+  "tasal9/ZamAI-Sentiment-Pashto": {
+    "has_weights": true,
+    "has_tokenizer_files": true,
+    "has_readme": true,
+    "has_config": true,
+    "weight_files": [
+      "model.safetensors"
+    ],
+    "tokenizer_files": [
+      "merges.txt",
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "vocab.json"
+    ]
+  },
+  "tasal9/ZamAI-Facebook-XLM-Pashto": {
+    "has_weights": false,
+    "has_tokenizer_files": false,
+    "has_readme": true,
+    "has_config": false,
+    "weight_files": [],
+    "tokenizer_files": []
+  },
+  "tasal9/ZamAI-mT5-Pashto": {
+    "has_weights": true,
+    "has_tokenizer_files": true,
+    "has_readme": true,
+    "has_config": true,
+    "weight_files": [
+      "model.safetensors",
+      "training_args.bin"
+    ],
+    "tokenizer_files": [
+      "tokenizer_config.json"
+    ]
+  }
+}
