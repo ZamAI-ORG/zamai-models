@@ -33,6 +33,12 @@ logs/
 # HuggingFace
 HF-Token.txt
 
+# Large dataset artifacts (kept on Hugging Face instead of Git)
+data/raw/ZamAI-Pashto-Dataset-Cleaned/
+data/raw/ZamAI-Pashto-Mega-Dataset/
+data/processed/ZamAI-Pashto-Dataset-Cleaned/
+data/processed/ZamAI-Pashto-Mega-Dataset/
+
 # Docker
 .dockerignore
 
