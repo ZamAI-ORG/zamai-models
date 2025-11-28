@@ -27,6 +27,7 @@ def parse_args() -> argparse.Namespace:
         (("--per-device-batch",), {"type": int, "default": 4, "help": "Per-device train batch size"}),
         (("--lr",), {"type": float, "default": 2e-4, "help": "Learning rate"}),
         (("--max-train-samples",), {"type": int, "default": 5000, "help": "Optional cap on training samples"}),
+        (("--max-seq-length",), {"type": int, "default": 512, "help": "Sequence length for tokenization"}),
         (("--push-to-hub",), {"action": "store_true", "help": "Upload adapter to tasal9/ZamAI-Facebook-XLM-Pashto"}),
         (("--token-path",), {"default": "HF-Token.txt", "help": "HF token path (used when pushing)"}),
     )
@@ -67,7 +68,7 @@ def prepare_dataset(args: argparse.Namespace, tokenizer):
         for idx in range(len(batch[keys[0]])):
             row = {key: batch[key][idx] for key in keys}
             rows.append(build_text(row))
-        return tokenizer(rows, truncation=True, max_length=512)
+        return tokenizer(rows, truncation=True, max_length=args.max_seq_length)
 
     print("✂️  Tokenizing dataset ...")
     tokenized = dataset.map(
