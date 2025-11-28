@@ -18,12 +18,12 @@ from transformers import (
     TrainingArguments,
 )
 
-MODEL_ID = "tasal9/ZamAI-mT5-Pashto"
+MODEL_ID = "{model['model_id']}"
 BASE_MODEL = "google/mt5-base"
 DEFAULT_DATASET = "tasal9/ZamAi-Pashto-Datasets-V2"
 MAX_SEQ_LENGTH = 512
 
-_MODEL_CACHE = {"model": None, "tokenizer": None}
+_MODEL_CACHE = {{"model": None, "tokenizer": None}}
 
 
 def _device() -> str:
@@ -80,7 +80,7 @@ def translate_text(text: str, direction: str) -> str:
         max_length=MAX_SEQ_LENGTH,
     )
     if torch.cuda.is_available():
-        inputs = {k: v.to(_device()) for k, v in inputs.items()}
+        inputs = {{k: v.to(_device()) for k, v in inputs.items()}}
 
     outputs = model.generate(
         **inputs,
@@ -94,11 +94,11 @@ def translate_text(text: str, direction: str) -> str:
 def _prepare_dataset(dataset, direction: str):
     def convert(example):
         src, tgt = _extract_pair(example, direction)
-        return {"source_text": src, "target_text": tgt}
+        return {{"source_text": src, "target_text": tgt}}
 
     converted = dataset.map(convert)
     converted = converted.filter(lambda ex: ex["source_text"] and ex["target_text"])
-    extra_cols = [col for col in converted.column_names if col not in {"source_text", "target_text"}]
+    extra_cols = [col for col in converted.column_names if col not in {{"source_text", "target_text"}}]
     return converted.remove_columns(extra_cols)
 
 
@@ -190,16 +190,16 @@ def start_training(
         if push_to_hub:
             trainer.push_to_hub(commit_message="Update ZamAI mT5 translator adapter")
 
-        return f"✅ Training complete! Samples used: {len(tokenized)}"
+        return f"✅ Training complete! Samples used: {{len(tokenized)}}"
 
     except Exception as exc:  # pragma: no cover - runtime feedback is shown in the UI
-        return f"❌ Training error: {exc}"
+        return f"❌ Training error: {{exc}}"
 
 
 with gr.Blocks(title="ZamAI mT5 Pashto Translator", theme=gr.themes.Soft()) as demo:
     gr.Markdown("## 🇦🇫 ZamAI mT5 Pashto Translation + Training")
     gr.Markdown(
-        f"**Model:** `{MODEL_ID}` · **Base:** `{BASE_MODEL}` · **Dataset:** `{DEFAULT_DATASET}`"
+        f"**Model:** `{{MODEL_ID}}` · **Base:** `{{BASE_MODEL}}` · **Dataset:** `{{DEFAULT_DATASET}}`"
     )
 
     with gr.Tab("Translate"):
