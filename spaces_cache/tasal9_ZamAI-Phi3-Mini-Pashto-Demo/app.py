@@ -4,13 +4,16 @@ This wraps the main application from src/app.py
 """
 import os
 from pathlib import Path
-import spaces
 
 # Import the main app components
 from src.app import load_vector_store, retrieve, build_prompt, create_pipeline, RAG_DEFAULT_K
 
 import gradio as gr
-from sentence_transformers import SentenceTransformer
+
+try:
+    from sentence_transformers import SentenceTransformer  # type: ignore
+except ImportError:
+    SentenceTransformer = None
 
 # Configuration
 MODEL_PATH = os.environ.get("MODEL_PATH", "tasal9/ZamAI-Phi-3-Mini-Pashto")
@@ -19,7 +22,11 @@ EMB_MODEL = os.environ.get("EMB_MODEL", "sentence-transformers/paraphrase-multil
 
 # Initialize components
 print(f"Loading embedding model: {EMB_MODEL}")
-emb_model = SentenceTransformer(EMB_MODEL)
+if SentenceTransformer:
+    emb_model = SentenceTransformer(EMB_MODEL)
+else:
+    emb_model = None
+    print("Warning: sentence_transformers not installed. RAG features disabled.")
 
 print(f"Loading vector store from: {STORE_PATH}")
 try:
@@ -37,7 +44,7 @@ print("Model loaded successfully!")
 
 def answer(question: str, k: int = RAG_DEFAULT_K):
     """Answer a question using RAG."""
-    if index is None or not texts:
+    if index is None or not texts or emb_model is None:
         return "❌ Vector store not initialized. Please contact the space owner."
     
     try:
@@ -56,7 +63,8 @@ def answer(question: str, k: int = RAG_DEFAULT_K):
 
 
 # Create Gradio interface
-with gr.Blocks(title="Pashto Tutor (Phi-3 RAG)", theme=gr.themes.Soft()) as demo:
+demo = gr.Blocks(theme=gr.themes.Soft())
+with demo:
     gr.HTML("""
     <div style="text-align: center; padding: 20px;">
         <h1>📚 Pashto Educational Tutor</h1>
