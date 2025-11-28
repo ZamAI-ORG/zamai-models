@@ -4,7 +4,7 @@
     "sdk": "gradio",
     "hardware": "zero-gpu-a10g",
     "zerogpu_usage": true,
-    "runtime_status": "RUNTIME_ERROR",
+    "runtime_status": "RUNNING",
     "files": [
       ".gitattributes",
       "README.md",
@@ -42,9 +42,9 @@
   {
     "space_id": "tasal9/ZamAI-Pashto-Translator-FacebookNLB-ps-en",
     "sdk": "gradio",
-    "hardware": "unknown",
+    "hardware": "zero-gpu-a10g",
     "zerogpu_usage": true,
-    "runtime_status": "RUNTIME_ERROR",
+    "runtime_status": "BUILDING",
     "files": [
       ".gitattributes",
       "README.md",
@@ -55,16 +55,16 @@
     "has_app": true,
     "has_readme": true,
     "has_requirements": true,
-    "readme_content": "---\ntitle: ZamAI Pashto Translator FacebookNLB Ps En\nemoji: 📚\ncolorFrom: green\ncolorTo: red\nsdk: gradio\nsdk_version: 5.42.0\napp_file: app.py\npinned: false\nlicense: apache-2.0\n---\n![ZeroGPU](https://img.shields.io/badge/ZeroGPU-Enabled-blue)\n\n\nCheck out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference",
-    "app_preview": "# fine_tune_facebooknlb_pashto.py\n\nfrom datasets import load_dataset\nfrom transformers import AutoTokenizer, AutoModelForSeq2SeqLM, Seq2SeqTrainingArguments, Seq2SeqTrainer, DataCollatorForSeq2Seq\nimport torch\nimport spaces\n\n# --------------------------\n# CONFIG\n# --------------------------\nMODEL_NA...",
-    "requirements": "transformers>=4.43.0\ndatasets>=2.19.0\naccelerate>=0.33.0\nevaluate>=0.4.1\ntorch>=2.3.0\nsentencepiece\nprotobuf\nhuggingface_hub\nspaces\n"
+    "readme_content": "---\ntitle: ZamAI Pashto Translator FacebookNLB Ps En\nemoji: 📚\ncolorFrom: green\ncolorTo: red\nsdk: gradio\nsdk_version: 5.49.1\napp_file: app.py\npinned: false\nlicense: apache-2.0\nhardware: zero-gpu-a10g\n---\n\n# 🇦🇫 ZamAI Pashto → English Translator\n\nInteractive Gradio demo for the fine-tuned **tasal9/ZamAI-Pashto-Translator-FacebookNLB-ps-en** model.\n\n## Features\n- Pashto ➜ English translation powered by Facebook NLLB\n- ZeroGPU deployment with adjustable decoding controls\n- Ready-to-use examples for q...",
+    "app_preview": "import gradio as gr\nimport torch\nfrom transformers import AutoTokenizer, AutoModelForSeq2SeqLM\nimport spaces\n\nMODEL_ID = \"tasal9/ZamAI-Pashto-Translator-FacebookNLB-ps-en\"\nDEVICE = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\n\nTOKENIZER = None\nMODEL = None\n\n\ndef _load_model():\n    to...",
+    "requirements": "gradio>=4.0.0\ntransformers>=4.37.0\ntorch>=2.1.0\naccelerate>=0.25.0\nsentencepiece\nspaces\n"
   },
   {
     "space_id": "tasal9/ZamAI-mt5-Pashto-training-Space",
     "sdk": "gradio",
-    "hardware": "unknown",
+    "hardware": "cpu-upgrade",
     "zerogpu_usage": false,
-    "runtime_status": "RUNTIME_ERROR",
+    "runtime_status": "BUILDING",
     "files": [
       ".env.template",
       ".gitattributes",
@@ -87,7 +87,7 @@
     "has_app": true,
     "has_readme": true,
     "has_requirements": true,
-    "readme_content": "---\ntitle: ZamAI Mt5 Pashto Training Space\nemoji: 🚀\ncolorFrom: blue\ncolorTo: red\nsdk: gradio\nsdk_version: 5.49.1\napp_file: train.py\npinned: false\nlicense: apache-2.0\n---\n![ZeroGPU](https://img.shields.io/badge/ZeroGPU-Enabled-blue)\n\n\nCheck out the configuration reference at [Spaces config reference](https://huggingface.co/docs/hub/spaces-config-reference).\n\nRunning training locally (notes)\n--------------------------------\n\nThis Space contains a training script `train.py` used to finetune the `ta...",
+    "readme_content": "---\ntitle: ZamAI mT5 Pashto Training Space\nemoji: 🚀\ncolorFrom: blue\ncolorTo: red\nsdk: gradio\nsdk_version: 5.49.1\napp_file: app.py\npinned: false\nlicense: apache-2.0\nhardware: cpu-upgrade\n---\n![ZeroGPU](https://img.shields.io/badge/ZeroGPU-Enabled-blue)\n\n\nCheck out the configuration reference at [Spaces config reference](https://huggingface.co/docs/hub/spaces-config-reference).\n\nRunning training locally (notes)\n--------------------------------\n\nThis Space contains a training script `train.py` used...",
     "app_preview": "\"\"\"\nZamAI mT5 Pashto Model - Interactive Demo\nFine-tuned mT5 model for Pashto language tasks\n\"\"\"\n\nimport gradio as gr\nfrom transformers import AutoTokenizer, AutoModelForSeq2SeqLM\nimport torch\n\n# Model configuration\nMODEL_ID = \"tasal9/ZamAI-mT5-Pashto\"\n\nprint(f\"🔄 Loading model: {MODEL_ID}\")\n\ntry:\n  ...",
     "requirements": "transformers==4.42.4\ndatasets==2.20.0\nsentencepiece\naccelerate\ntorch\nhuggingface_hub\ngradio>=4.0.0,<5.0.0\nsacrebleu\nspaces\n"
   },
@@ -120,7 +120,7 @@
     "sdk": "gradio",
     "hardware": "unknown",
     "zerogpu_usage": false,
-    "runtime_status": "RUNTIME_ERROR",
+    "runtime_status": "BUILDING",
     "files": [
       ".gitignore",
       "README.md",
@@ -146,7 +146,7 @@
     "has_requirements": true,
     "readme_content": "---\ntitle: ZamAI-Phi3-MiniPashto\nsdk: gradio\nsdk_version: 5.49.1\napp_file: app.py\nemoji: 📚\ncolorFrom: blue\ncolorTo: green\npinned: false\n---\n![ZeroGPU](https://img.shields.io/badge/ZeroGPU-Enabled-blue)\n\n## Model Overview\n\n**Pashto-Edu-Phi3-SFT** is a language model fine-tuned to Pashto educational content, built on a small Microsoft Phi-3 variant. The pipeline automates collection, extraction, dataset generation, fine-tuning (via QLoRA/PEFT), and serving with a RAG-powered Gradio tutor interface...",
     "app_preview": "\"\"\"\nRoot-level app.py for Hugging Face Spaces.\nThis wraps the main application from src/app.py\n\"\"\"\nimport os\nfrom pathlib import Path\nimport spaces\n\n# Import the main app components\nfrom src.app import load_vector_store, retrieve, build_prompt, create_pipeline, RAG_DEFAULT_K\n\nimport gradio as gr\nfro...",
-    "requirements": "httpx\nbeautifulsoup4\npypdf\ntransformers\naccelerate\npeft\ndatasets\nsentence-transformers\nfaiss-cpu\ngradio\nnumpy\ntqdm\nspaces\n"
+    "requirements": "httpx\nbeautifulsoup4\npypdf\ntransformers\naccelerate\npeft\ndatasets\nsentence-transformers\nfaiss-cpu\ngradio\nnumpy\ntqdm\nspaces\ntorch>=2.1.0\n"
   },
   {
     "space_id": "tasal9/ZamAI-Phi3-Mini-Pashto-Training-Space",
