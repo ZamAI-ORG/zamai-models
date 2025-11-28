@@ -18,60 +18,20 @@ from transformers import (
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Train a LoRA adapter on Pashto data")
-    parser.add_argument(
-        "--dataset",
-        default="tasal9/ZamAi-Pashto-Datasets-V2",
-        help="Dataset repo id to train on",
+    arg_configs = (
+        (("--dataset",), {"default": "tasal9/ZamAi-Pashto-Datasets-V2", "help": "Dataset repo id"}),
+        (("--dataset-split",), {"default": "train", "help": "Dataset split (default: train)"}),
+        (("--base-model",), {"default": "FacebookAI/xlm-roberta-base", "help": "Base model checkpoint"}),
+        (("--output-dir",), {"default": "adapters/xlm_roberta_pashto_lora_trained", "help": "Adapter output directory"}),
+        (("--max-steps",), {"type": int, "default": 200, "help": "Maximum training steps"}),
+        (("--per-device-batch",), {"type": int, "default": 4, "help": "Per-device train batch size"}),
+        (("--lr",), {"type": float, "default": 2e-4, "help": "Learning rate"}),
+        (("--max-train-samples",), {"type": int, "default": 5000, "help": "Optional cap on training samples"}),
+        (("--push-to-hub",), {"action": "store_true", "help": "Upload adapter to tasal9/ZamAI-Facebook-XLM-Pashto"}),
+        (("--token-path",), {"default": "HF-Token.txt", "help": "HF token path (used when pushing)"}),
     )
-    parser.add_argument(
-        "--dataset-split",
-        default="train",
-        help="Dataset split to use (default: train)",
-    )
-    parser.add_argument(
-        "--base-model",
-        default="FacebookAI/xlm-roberta-base",
-        help="Base model checkpoint",
-    )
-    parser.add_argument(
-        "--output-dir",
-        default="adapters/xlm_roberta_pashto_lora_trained",
-        help="Where to save the trained adapter",
-    )
-    parser.add_argument(
-        "--max-steps",
-        type=int,
-        default=200,
-        help="Maximum training steps (keeps the run short)",
-    )
-    parser.add_argument(
-        "--per-device-batch",
-        type=int,
-        default=4,
-        help="Per-device train batch size",
-    )
-    parser.add_argument(
-        "--lr",
-        type=float,
-        default=2e-4,
-        help="Learning rate",
-    )
-    parser.add_argument(
-        "--max-train-samples",
-        type=int,
-        default=5000,
-        help="Optional cap on number of training samples to keep run lightweight",
-    )
-    parser.add_argument(
-        "--push-to-hub",
-        action="store_true",
-        help="Upload the resulting adapter to tasal9/ZamAI-Facebook-XLM-Pashto",
-    )
-    parser.add_argument(
-        "--token-path",
-        default="HF-Token.txt",
-        help="Path to file containing the HF token (used when pushing)",
-    )
+    for names, kwargs in arg_configs:
+        parser.add_argument(*names, **kwargs)
     return parser.parse_args()
 
 
@@ -86,21 +46,20 @@ def build_text(example: dict) -> str:
     return " \n".join(parts)
 
 
-def main() -> None:
-    args = parse_args()
-    output_dir = Path(args.output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
+def load_model_and_tokenizer(base_model: str):
+    print("🔡 Loading tokenizer and base model ...")
+    tokenizer = AutoTokenizer.from_pretrained(base_model)
+    model = AutoModelForMaskedLM.from_pretrained(base_model)
+    return tokenizer, model
 
+
+def prepare_dataset(args: argparse.Namespace, tokenizer):
     print(f"📚 Loading dataset {args.dataset} ({args.dataset_split}) ...")
     dataset = load_dataset(
         args.dataset,
         split=args.dataset_split,
         verification_mode="no_checks",
     )
-
-    print("🔡 Loading tokenizer and base model ...")
-    tokenizer = AutoTokenizer.from_pretrained(args.base_model)
-    model = AutoModelForMaskedLM.from_pretrained(args.base_model)
 
     def tokenize(batch):
         keys = list(batch.keys())
@@ -120,6 +79,32 @@ def main() -> None:
     if args.max_train_samples and len(tokenized) > args.max_train_samples:
         tokenized = tokenized.shuffle(seed=42).select(range(args.max_train_samples))
 
+    return tokenized
+
+
+def push_adapter(args: argparse.Namespace, output_dir: Path) -> None:
+    from huggingface_hub import HfApi
+
+    token = Path(args.token_path).read_text().strip()
+    api = HfApi(token=token)
+    print("☁️  Uploading adapter to Hugging Face ...")
+    api.upload_folder(
+        folder_path=str(output_dir),
+        repo_id="tasal9/ZamAI-Facebook-XLM-Pashto",
+        repo_type="model",
+        path_in_repo="adapters/pashto-lora",
+        commit_message="Update Pashto LoRA adapter",
+    )
+    print("✅ Upload complete")
+
+
+def main() -> None:
+    args = parse_args()
+    output_dir = Path(args.output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+
+    tokenizer, model = load_model_and_tokenizer(args.base_model)
+    tokenized = prepare_dataset(args, tokenizer)
     data_collator = DataCollatorForLanguageModeling(tokenizer=tokenizer, mlm_probability=0.15)
 
     lora_config = LoraConfig(
@@ -163,22 +148,8 @@ def main() -> None:
     )
 
     if args.push_to_hub:
-        from huggingface_hub import HfApi
-
-        token = Path(args.token_path).read_text().strip()
-        api = HfApi(token=token)
-        print("☁️  Uploading adapter to Hugging Face ...")
-        api.upload_folder(
-            folder_path=str(output_dir),
-            repo_id="tasal9/ZamAI-Facebook-XLM-Pashto",
-            repo_type="model",
-            path_in_repo="adapters/pashto-lora",
-            commit_message="Update Pashto LoRA adapter",
-        )
-        print("✅ Upload complete")
+        push_adapter(args, output_dir)
 
 
 if __name__ == "__main__":
     main()
-+
-+    main()
