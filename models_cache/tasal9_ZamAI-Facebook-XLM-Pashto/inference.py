@@ -9,7 +9,7 @@ from transformers import pipeline, AutoTokenizer, AutoModelForMaskedLM
 
 
 LOCAL_DIR = Path("./base_model")
-MODEL_NAME = "facebook/xlm-roberta-base"
+MODEL_NAME = "FacebookAI/xlm-roberta-base"
 
 
 def load_pipeline():

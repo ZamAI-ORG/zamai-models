@@ -6,7 +6,7 @@ Metadata
 - datasets: `tasal9/ZamAI-Pashto-Dataset-Cleaned`
 - language: `ps` (Pashto)
 - metrics: accuracy
-- base_model: `facebook/xlm-roberta-base`
+- base_model: `FacebookAI/xlm-roberta-base`
 - pipeline_tag: fill-mask
 - library_name: transformers / adapter-transformers
 

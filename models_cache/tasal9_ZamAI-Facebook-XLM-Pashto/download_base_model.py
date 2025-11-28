@@ -10,7 +10,7 @@ from pathlib import Path
 from transformers import AutoTokenizer, AutoModelForMaskedLM
 
 
-MODEL_NAME = "facebook/xlm-roberta-base"
+MODEL_NAME = "FacebookAI/xlm-roberta-base"
 TARGET_DIR = Path("./base_model")
 
 
