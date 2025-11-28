@@ -3,7 +3,6 @@ Root-level app.py for Hugging Face Spaces.
 This wraps the main application from src/app.py
 """
 import os
-from pathlib import Path
 
 # Import the main app components
 from src.app import load_vector_store, retrieve, build_prompt, create_pipeline, RAG_DEFAULT_K
