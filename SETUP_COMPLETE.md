@@ -3,7 +3,7 @@
 ## ✅ What We've Accomplished
 
 ### 1. Created ZeroGPU Training Files
-We've generated ready-to-upload files for **6 training spaces**:
+We've generated ready-to-upload files for **7 training spaces**:
 
 ```
 zerogpu_files/
@@ -11,6 +11,7 @@ zerogpu_files/
 ├── llama3-pashto/          # Pashto Llama3 training
 ├── mistral-pashto/         # Pashto Mistral training
 ├── phi3-pashto/            # Pashto Phi-3 training
+├── mt5-pashto/             # Pashto mT5 translation training
 ├── whisper-pashto/         # Pashto Whisper ASR training
 └── embeddings-multilingual/ # Multilingual embeddings training
 ```
@@ -34,6 +35,12 @@ Each folder contains:
 - ✅ Multiple language support (ps, en, fa, ar, ur)
 - ✅ Fine-tuning setup for audio datasets
 - ✅ ZeroGPU acceleration
+
+**mT5 Translation Model**:
+- ✅ Bidirectional EN↔PS translation demo interface
+- ✅ LoRA fine-tuning pipeline for `google/mt5-base`
+- ✅ Smart dataset column detection for `input/output`, `en/ps`, or `prompt/completion`
+- ✅ Optional auto-push of adapters back to Hugging Face Hub
 
 **Embeddings Model**:
 - ✅ Text embedding generation
@@ -71,6 +78,7 @@ The spaces will automatically build and deploy. Wait for "Running" status.
 - `zamai-llama3-pashto-training`
 - `zamai-mistral-pashto-training`
 - `zamai-phi3-pashto-training`
+- `zamai-mt5-pashto-training`
 - `zamai-whisper-pashto-training`
 - `zamai-embeddings-multilingual-training`
 

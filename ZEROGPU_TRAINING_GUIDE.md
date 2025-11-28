@@ -14,6 +14,12 @@ We've created ready-to-upload files for **7 training spaces**:
 6. **whisper-pashto** - Pashto Whisper ASR training
 7. **embeddings-multilingual** - Multilingual embeddings training
 
+### 🆕 mT5 Translation Space Highlights
+- 🔁 Built-in EN↔PS translation demo powered by `tasal9/ZamAI-mT5-Pashto`
+- ⚙️ LoRA training pipeline that wraps `google/mt5-base` with ZeroGPU-friendly defaults
+- 🧹 Automatic dataset column detection for `input/output`, `en/ps`, or `prompt/completion` schemas
+- ☁️ Optional push-to-hub so fine-tuned adapters land back in your model repo immediately
+
 ## 🎯 Quick Setup (Manual Upload)
 
 ### For Each Model:
