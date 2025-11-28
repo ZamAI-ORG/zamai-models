@@ -7,8 +7,6 @@ Fine-tune language models for Pashto chat and text generation
 import os
 import json
 import torch
-import sys
-from pathlib import Path
 from datasets import load_dataset, Dataset
 from transformers import (
     AutoTokenizer, AutoModelForCausalLM,
@@ -79,40 +77,9 @@ class PashtoModelTrainer:
         print("Loading Pashto dataset...")
         
         if self.dataset_name:
-            # Load from Hugging Face Hub
-            print(f"Loading dataset from HF Hub: {self.dataset_name}")
-            
-            if self.dataset_format == "instruction":
-                # Load instruction-following format (ZamAI dataset)
-                train_file = self.config.get("train_file", "pashto_train_instruction.jsonl")
-                validation_file = self.config.get("validation_file", "pashto_val_instruction.jsonl")
-                
-                dataset = load_dataset(
-                    self.dataset_name,
-                    data_files={
-                        "train": train_file,
-                        "validation": validation_file
-                    }
-                )
-                
-                train_dataset = dataset["train"]
-                eval_dataset = dataset["validation"]
-            else:
-                # Load standard format
-                dataset = load_dataset(self.dataset_name, split="train")
-                # Split for evaluation
-                split_dataset = dataset.train_test_split(test_size=0.1, seed=42)
-                train_dataset = split_dataset["train"]
-                eval_dataset = split_dataset["test"]
-                
+            train_dataset, eval_dataset = self._load_remote_dataset()
         elif self.dataset_path and self.dataset_path.endswith('.json'):
-            # Load local JSON dataset
-            with open(self.dataset_path, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            full_dataset = Dataset.from_list(data)
-            split_dataset = full_dataset.train_test_split(test_size=0.1, seed=42)
-            train_dataset = split_dataset["train"]
-            eval_dataset = split_dataset["test"]
+            train_dataset, eval_dataset = self._load_local_json_dataset()
         else:
             raise ValueError("Either dataset_name or dataset_path must be provided")
             
@@ -156,6 +123,66 @@ class PashtoModelTrainer:
         )
         
         return train_tokenized, eval_tokenized
+
+    def _load_remote_dataset(self):
+        """Load splits from the Hugging Face Hub."""
+        print(f"Loading dataset from HF Hub: {self.dataset_name}")
+
+        if self.dataset_format == "instruction":
+            train_file = self.config.get("train_file", "pashto_train_instruction.jsonl")
+            validation_file = self.config.get("validation_file", "pashto_val_instruction.jsonl")
+
+            dataset = load_dataset(
+                self.dataset_name,
+                data_files={
+                    "train": train_file,
+                    "validation": validation_file
+                }
+            )
+
+            train_dataset = dataset["train"]
+            eval_dataset = dataset["validation"]
+
+            self._validate_instruction_columns("train", train_dataset)
+            self._validate_instruction_columns("validation", eval_dataset)
+            return train_dataset, eval_dataset
+
+        dataset = load_dataset(self.dataset_name, split="train")
+        split_dataset = dataset.train_test_split(test_size=0.1, seed=42)
+        return split_dataset["train"], split_dataset["test"]
+
+    def _load_local_json_dataset(self):
+        """Load dataset rows from a local JSON file."""
+        with open(self.dataset_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        full_dataset = Dataset.from_list(data)
+        split_dataset = full_dataset.train_test_split(test_size=0.1, seed=42)
+
+        if self.dataset_format == "instruction":
+            self._validate_instruction_columns("train", split_dataset["train"])
+            self._validate_instruction_columns("validation", split_dataset["test"])
+
+        return split_dataset["train"], split_dataset["test"]
+
+    def _validate_instruction_columns(self, split_name, dataset_split):
+        """Ensure instruction datasets expose the expected columns."""
+        required = {"instruction", "input", "output"}
+        available = set(dataset_split.column_names)
+        missing = required - available
+        unexpected = {"prompt", "completion"} & available
+
+        if missing or unexpected:
+            guidance = (
+                "Run scripts/datasets/normalize_prompt_completion.py on any"
+                " prompt/completion files before uploading them to Hugging Face."
+            )
+            raise ValueError(
+                f"Invalid dataset columns for split '{split_name}'. Expected"
+                f" {sorted(required)} but found {sorted(available)}. Missing"
+                f" {sorted(missing) if missing else 'none'}; unexpected"
+                f" {sorted(unexpected) if unexpected else 'none'}. {guidance}"
+            )
     
     def format_instruction_data(self, instruction, input_text, output_text):
         """Format instruction-following data for training"""

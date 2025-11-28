@@ -95,6 +95,7 @@ python scripts/training/train_zamai_v4.py
 - **tasal9/ZamAI_Pashto_Dataset** - Instruction-following Pashto dataset
 - Format: `{instruction, input, output}`
 - Files: `pashto_train_instruction.jsonl`, `pashto_val_instruction.jsonl`
+- **Normalize prompt/completion files**: run `python scripts/datasets/normalize_prompt_completion.py --source <prompt_file> --destination <instruction_file>` before uploading any `pashto_*_prompt_completion.jsonl` splits to Hugging Face to avoid schema mismatches.
 
 ## ⚙️ Configuration
 

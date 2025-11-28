@@ -104,6 +104,16 @@ with src.open() as reader, dst.open("w", encoding="utf-8") as writer:
 ```
 Upload the converted file (or define separate dataset configurations) to avoid schema-cast errors like `DatasetGenerationCastError`.
 
+Prefer an automated workflow? Use the helper script that now ships with the repo:
+
+```bash
+python scripts/datasets/normalize_prompt_completion.py \
+  --source data/raw/pashto_train_prompt_completion.jsonl \
+  --destination data/processed/pashto_train_instruction_ready.jsonl
+```
+
+Repeat for the validation split (change the `--source` path). The script keeps Unicode intact and guarantees the `instruction/input/output` columns so the resulting files are ready to upload to **tasal9/ZamAi-Pashto-Datasets-V2** or **tasal9/ZamAI_Pashto_Dataset**.
+
 ## 🚧 Known Issue & Fix
 The HF dataset builder expects identical column names across all data files. Mixing `instruction/input/output` files with `prompt/completion` files inside the same configuration triggers:
 ```

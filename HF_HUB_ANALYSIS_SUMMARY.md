@@ -105,6 +105,15 @@ pip list | grep -E "(torch|transformers|datasets)"
 ```
 
 ### 2. Verify Dataset Access
+Normalize any prompt/completion splits before uploading or reusing them to make sure every file exposes the same `instruction/input/output` columns:
+
+```bash
+python scripts/datasets/normalize_prompt_completion.py \
+   --source data/raw/pashto_train_prompt_completion.jsonl \
+   --destination data/processed/pashto_train_instruction_ready.jsonl
+```
+
+After normalization, validate that the dataset loads correctly:
 ```bash
 python -c "from datasets import load_dataset; print(load_dataset('tasal9/ZamAI_Pashto_Dataset'))"
 ```
