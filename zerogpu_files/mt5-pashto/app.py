@@ -1,4 +1,5 @@
 import os
+from typing import Dict, Optional, Tuple, cast
 
 import gradio as gr
 import spaces
@@ -14,6 +15,7 @@ from transformers import (
     AutoModelForSeq2SeqLM,
     AutoTokenizer,
     DataCollatorForSeq2Seq,
+    PreTrainedTokenizerBase,
     Trainer,
     TrainingArguments,
 )
@@ -23,7 +25,7 @@ BASE_MODEL = "google/mt5-base"
 DEFAULT_DATASET = "tasal9/ZamAi-Pashto-Datasets-V2"
 MAX_SEQ_LENGTH = 512
 
-_MODEL_CACHE = {"model": None, "tokenizer": None}
+_MODEL_CACHE: Dict[str, Optional[object]] = {"model": None, "tokenizer": None}
 
 
 def _device() -> str:
@@ -31,11 +33,12 @@ def _device() -> str:
 
 
 @spaces.GPU
-def load_model():
+def load_model() -> Tuple[AutoModelForSeq2SeqLM, PreTrainedTokenizerBase]:
     """Lazy-load the translation model for inference."""
 
-    if _MODEL_CACHE["model"] is None:
-        tokenizer = AutoTokenizer.from_pretrained(MODEL_ID, use_fast=False)
+    if _MODEL_CACHE["model"] is None or _MODEL_CACHE["tokenizer"] is None:
+        # The uploaded adapter repo does not include spiece.model, so reuse the base tokenizer
+        tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, use_fast=False)
         model = AutoModelForSeq2SeqLM.from_pretrained(
             MODEL_ID,
             torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
@@ -43,7 +46,10 @@ def load_model():
         model.to(_device())
         _MODEL_CACHE["model"] = model
         _MODEL_CACHE["tokenizer"] = tokenizer
-    return _MODEL_CACHE["model"], _MODEL_CACHE["tokenizer"]
+    return (
+        cast(AutoModelForSeq2SeqLM, _MODEL_CACHE["model"]),
+        cast(PreTrainedTokenizerBase, _MODEL_CACHE["tokenizer"]),
+    )
 
 
 def _direction_prefix(direction: str) -> str:
