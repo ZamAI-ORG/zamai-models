@@ -4,14 +4,15 @@ This guide will help you set up ZeroGPU training spaces for all your ZamAI model
 
 ## 📋 Overview
 
-We've created ready-to-upload files for **6 training spaces**:
+We've created ready-to-upload files for **7 training spaces**:
 
 1. **bloom-pashto** - Pashto BLOOM model training
 2. **llama3-pashto** - Pashto Llama3 model training  
 3. **mistral-pashto** - Pashto Mistral model training
 4. **phi3-pashto** - Pashto Phi-3 model training
-5. **whisper-pashto** - Pashto Whisper ASR training
-6. **embeddings-multilingual** - Multilingual embeddings training
+5. **mt5-pashto** - Pashto MT5 translation (English↔Pashto) training
+6. **whisper-pashto** - Pashto Whisper ASR training
+7. **embeddings-multilingual** - Multilingual embeddings training
 
 ## 🎯 Quick Setup (Manual Upload)
 
@@ -99,6 +100,7 @@ class ZamAITrainer:
             )
             
             self.model = get_peft_model(self.model, lora_config)
+
             self.model.print_trainable_parameters()
             
             self.status = "✅ Model setup complete! Ready to train."
