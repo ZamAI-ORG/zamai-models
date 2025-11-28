@@ -1,0 +1,14 @@
+httpx
+beautifulsoup4
+pypdf
+transformers
+accelerate
+peft
+datasets
+sentence-transformers
+faiss-cpu
+gradio
+numpy
+tqdm
+spaces
+torch>=2.1.0

@@ -13,7 +13,7 @@ import gradio as gr
 from sentence_transformers import SentenceTransformer
 
 # Configuration
-MODEL_PATH = os.environ.get("MODEL_PATH", "ZamZeerak-Phi3-Pashto")
+MODEL_PATH = os.environ.get("MODEL_PATH", "tasal9/ZamAI-Phi-3-Mini-Pashto")
 STORE_PATH = os.environ.get("STORE_PATH", "rag_store")
 EMB_MODEL = os.environ.get("EMB_MODEL", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
 

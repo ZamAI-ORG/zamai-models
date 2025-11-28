@@ -1,0 +1,13 @@
+__pycache__/
+.venv/
+models/
+rag_store/
+*.index
+*.pt
+*.bin
+*.safetensors
+.ipynb_checkpoints/
+
+
+#Ignore insiders AI rules
+.github/instructions/codacy.instructions.md
