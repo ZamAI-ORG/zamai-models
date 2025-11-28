@@ -48,6 +48,20 @@ metrics:
 - **Languages:** Pashto (ps), English (en)
 - **Task:** Neural machine translation
 
+## 🧪 ZeroGPU Deployment & Automation
+
+- **Template:** Use the translation scaffold under `zerogpu_files/mt5-pashto/` (or add a `type: "translation"` entry for this model in `scripts/zerogpu/setup_files.py`).
+- **What you get:** The same Gradio UI with Translate/Training/Tips tabs, dataset column auto-detection, LoRA fine-tuning knobs, and optional push-to-hub uploads.
+- **Recommended space name:** `zamai-nllb-pashto-training` running on ZeroGPU A10G hardware.
+
+### Spin Up the Space
+
+1. Run `python scripts/zerogpu/setup_files.py` and update the generated `zerogpu_files/mt5-pashto/app.py` `MODEL_ID` to `tasal9/ZamAI-Pashto-Translator-FacebookNLB-ps-en` (or add a dedicated entry before running the script).
+2. Create a new Gradio Space on Hugging Face, set SDK=Gradio and Hardware=ZeroGPU A10G.
+3. Upload the generated `app.py`, `requirements.txt`, and `README.md`.
+4. Add your `HF_TOKEN` as a secret if you want the “Push to Hub” toggle to publish adapters automatically.
+5. Use the **Translate** tab as a smoke test, then switch to **Training** to fine-tune on new Pashto↔English corpora without touching local GPUs.
+
 ## 🚀 Quick Start
 
 ### Installation

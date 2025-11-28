@@ -56,6 +56,23 @@ model-index:
 - **Languages:** Pashto (ps), English (en)
 - **Task:** Sequence-to-sequence translation
 
+## 🧪 ZeroGPU Training & Demo Space
+
+- **Space:** [tasal9/ZamAI-mt5-Pashto-training-Space](https://huggingface.co/spaces/tasal9/ZamAI-mt5-Pashto-training-Space)
+- **Files:** `zerogpu_files/mt5-pashto/` (drop in `app.py`, `requirements.txt`, `README.md`)
+- **Highlights:** EN↔PS translation tab, LoRA training controls, dataset column auto-detection, push-to-hub toggle, and live tips for ZeroGPU usage.
+
+### Deploy It Yourself
+
+1. Create a ZeroGPU A10G Gradio space (recommended name: `zamai-mt5-pashto-training`).
+2. Upload the files from `zerogpu_files/mt5-pashto/` or regenerate them via `python scripts/zerogpu/setup_files.py`.
+3. Add your `HF_TOKEN` as a Space secret so the training tab can push adapters back to the Hub automatically.
+4. Click **Translate** to test the base adapter, then use the **Training** tab to fine-tune on any dataset that exposes `input/output`, `en/ps`, or `prompt/completion` fields.
+
+### Tokenizer Packaging Note
+
+`tasal9/ZamAI-mT5-Pashto` ships adapters without `spiece.model`. The ZeroGPU app (and this repo) now loads the tokenizer from `google/mt5-base` while keeping the fine-tuned weights from the adapter repo, eliminating the `SentencePieceProcessor_LoadFromFile TypeError` you might have seen in Spaces logs.
+
 ## 🚀 Quick Start
 
 ### Installation

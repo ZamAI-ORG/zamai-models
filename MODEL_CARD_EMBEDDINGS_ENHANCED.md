@@ -44,6 +44,19 @@ pipeline_tag: sentence-similarity
 - **Languages:** 50+ including Pashto, Dari, English, Arabic, Urdu
 - **Task:** Sentence embeddings, semantic similarity
 
+## 🧪 ZeroGPU Training & Evaluation Space
+
+- **Space files:** `zerogpu_files/embeddings-multilingual/`
+- **Tabs:** Embed text, compare semantic similarity, and kick off LoRA-style fine-tuning from the same UI.
+- **Hardware:** ZeroGPU A10G with automatic caching and status output.
+
+### Deploy in Minutes
+
+1. Run `python scripts/zerogpu/setup_files.py` (or copy the existing folder) to ensure the latest `app.py`, `requirements.txt`, and `README.md` are ready.
+2. Create a Gradio Space named something like `zamai-embeddings-training`, select **ZeroGPU - A10G** hardware, and upload the three files.
+3. Provide your dataset repo in the Training tab (any HF dataset with `text`-like columns works) and toggle “Push to Hub” if you want adapters auto-uploaded to `tasal9/Multilingual-ZamAI-Embeddings`.
+4. Use the test tabs to validate embeddings before/after training without leaving the browser.
+
 ## 🚀 Quick Start
 
 ### Installation
