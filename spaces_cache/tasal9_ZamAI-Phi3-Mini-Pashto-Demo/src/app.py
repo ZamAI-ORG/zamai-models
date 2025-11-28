@@ -1,29 +1,70 @@
 import argparse
 import json
 from pathlib import Path
-try:
-    import faiss
-except ImportError as e:
-    raise ImportError(
-        "faiss not found. Install with: pip install faiss-cpu (CPU) or pip install faiss-gpu (CUDA)."
-    ) from e
+from typing import Iterable, List, Optional, Tuple
+
 import numpy as np
 import gradio as gr
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
-from .config import config
+try:
+    import faiss  # type: ignore
+except ImportError:  # pragma: no cover - faiss may be unavailable on ZeroGPU
+    faiss = None
+
 
 RAG_DEFAULT_K = 4
 
 
-def load_vector_store(store_dir: str):
+class NumpyIndex:
+    """Lightweight FAISS-style index used when the persisted store is missing."""
+
+    def __init__(self, embeddings: np.ndarray):
+        self.embeddings = embeddings.astype('float32')
+
+    def search(self, query: np.ndarray, k: int) -> Tuple[np.ndarray, np.ndarray]:
+        if self.embeddings.size == 0:
+            raise ValueError("Vector store is empty")
+        sims = np.matmul(query, self.embeddings.T)
+        top_idx = np.argsort(-sims, axis=1)[:, :k]
+        top_scores = np.take_along_axis(sims, top_idx, axis=1)
+        return top_scores, top_idx
+
+
+def _build_fallback_index(
+    emb_model,
+    fallback_texts: Iterable[str],
+) -> Tuple[NumpyIndex, List[str]]:
+    texts = [text.strip() for text in fallback_texts if text.strip()]
+    if not texts:
+        raise FileNotFoundError("Vector store not found and no fallback texts supplied.")
+    embeddings = emb_model.encode(
+        texts,
+        batch_size=16,
+        normalize_embeddings=True,
+        convert_to_numpy=True,
+    )
+    return NumpyIndex(embeddings), texts
+
+
+def load_vector_store(
+    store_dir: str,
+    emb_model=None,
+    fallback_texts: Optional[Iterable[str]] = None,
+):
     index_path = Path(store_dir) / 'vector.index'
     texts_path = Path(store_dir) / 'texts.json'
-    if not index_path.exists() or not texts_path.exists():
-        raise FileNotFoundError("Vector store not found. Run ingest first.")
-    index = faiss.read_index(str(index_path))
-    texts = json.loads(Path(texts_path).read_text(encoding='utf-8'))
-    return index, texts
+    if index_path.exists() and texts_path.exists():
+        if faiss is None:
+            raise ImportError("faiss is required to read the persisted vector store.")
+        index = faiss.read_index(str(index_path))
+        texts = json.loads(Path(texts_path).read_text(encoding='utf-8'))
+        return index, texts
+
+    if emb_model is None or fallback_texts is None:
+        raise FileNotFoundError("Vector store not found. Run ingest first or provide fallback texts.")
+
+    return _build_fallback_index(emb_model, fallback_texts)
 
 
 def retrieve(query_emb_model, index, texts, query: str, k: int):

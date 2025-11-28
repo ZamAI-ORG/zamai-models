@@ -19,6 +19,13 @@ except ImportError:
 MODEL_PATH = os.environ.get("MODEL_PATH", "tasal9/ZamAI-Phi-3-Mini-Pashto")
 STORE_PATH = os.environ.get("STORE_PATH", "rag_store")
 EMB_MODEL = os.environ.get("EMB_MODEL", "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2")
+DEFAULT_CONTEXTS = [
+    "د پښتو ژبې ګرامر کې نوم، فعل او صفت د جملې د جوړښت بنسټ جوړوي. زده کوونکي باید هره ورځ لږ تر لږه یوه پاراګراف تحریر کړي تر څو لیکنه یې روانه شي.",
+    "د ریاضي بنسټیز مفاهیم لکه جمع، تفریق، ضرب او تقسیم د لومړنیو ټولګیو لپاره مهم دي. عملي تمرین او د ورځني ژوند مثالونه زده کړه اسانه کوي.",
+    "د طبعي علومو درسونه باید د چاپیریال ساتنې، اوبو د اهمیت، او د نباتاتو د ودې د پړاوونو تشریح ولري تر څو ماشومان له خپل چاپیریال سره مینه پیدا کړي.",
+    "Islamic studies lessons highlight honesty, respect for parents, and community service. Encourage students to connect each حدیث with a real-life example.",
+    "Pashto literature classes can include poems from Khushal Khan Khattak and Rahman Baba. Discussing د شاعر پیغام learners ته د اخلاقو، میړانې او ورورولۍ ارزښتونه یادوي.",
+]
 
 # Initialize components
 print(f"Loading embedding model: {EMB_MODEL}")
@@ -30,9 +37,9 @@ else:
 
 print(f"Loading vector store from: {STORE_PATH}")
 try:
-    index, texts = load_vector_store(STORE_PATH)
+    index, texts = load_vector_store(STORE_PATH, emb_model=emb_model, fallback_texts=DEFAULT_CONTEXTS)
     print(f"Loaded {len(texts)} text chunks")
-except FileNotFoundError as e:
+except (FileNotFoundError, ImportError) as e:
     print(f"Warning: {e}")
     print("RAG features will be disabled")
     index, texts = None, []
