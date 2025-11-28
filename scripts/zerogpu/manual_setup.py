@@ -371,8 +371,8 @@ def translate_text(text: str, direction: str) -> str:
     if not text:
         return "Please provide text to translate."
 
-    model, tokenizer = load_model()
-    inputs = tokenizer(
+    model, translation_tokenizer = load_model()
+    inputs = translation_tokenizer(
         _direction_prefix(direction) + text,
         return_tensors="pt",
         truncation=True,
@@ -387,7 +387,7 @@ def translate_text(text: str, direction: str) -> str:
         num_beams=4,
         early_stopping=True,
     )
-    return tokenizer.decode(outputs[0], skip_special_tokens=True)
+    return translation_tokenizer.decode(outputs[0], skip_special_tokens=True)
 
 
 def _prepare_dataset(dataset, direction: str):
@@ -415,7 +415,7 @@ def start_training(
         epochs = int(epochs)
         max_train_samples = int(max_train_samples) if max_train_samples else None
 
-        tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, use_fast=False)
+        training_tokenizer = AutoTokenizer.from_pretrained(BASE_MODEL, use_fast=False)
         model = AutoModelForSeq2SeqLM.from_pretrained(
             BASE_MODEL,
             load_in_8bit=True,
@@ -442,13 +442,13 @@ def start_training(
             return "❌ Could not find translation pairs in the dataset."
 
         def tokenize_batch(batch):
-            model_inputs = tokenizer(
+            model_inputs = training_tokenizer(
                 [_direction_prefix(direction) + text for text in batch["source_text"]],
                 max_length=MAX_SEQ_LENGTH,
                 truncation=True,
                 padding="max_length",
             )
-            labels = tokenizer(
+            labels = training_tokenizer(
                 batch["target_text"],
                 max_length=MAX_SEQ_LENGTH,
                 truncation=True,
@@ -458,7 +458,7 @@ def start_training(
             return model_inputs
 
         tokenized = dataset.map(tokenize_batch, batched=True, remove_columns=dataset.column_names)
-        data_collator = DataCollatorForSeq2Seq(tokenizer=tokenizer, model=model)
+        data_collator = DataCollatorForSeq2Seq(tokenizer=training_tokenizer, model=model)
 
         training_args = TrainingArguments(
             output_dir="./mt5_translation_outputs",
