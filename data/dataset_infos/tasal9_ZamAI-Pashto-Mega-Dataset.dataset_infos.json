@@ -1,0 +1,48 @@
+{
+  "default": {
+    "builder_name": "json",
+    "config_name": "default",
+    "version": {
+      "version_str": "1.0.0",
+      "major": 1,
+      "minor": 0,
+      "patch": 0
+    },
+    "description": "Normalized Pashto instruction-style data with unified instruction/input/output columns.",
+    "citation": "",
+    "homepage": "https://huggingface.co/tasal9",
+    "license": "apache-2.0",
+    "task_templates": null,
+    "splits": {
+      "merged_pashto_dataset": {
+        "name": "merged_pashto_dataset",
+        "num_bytes": 1438309927,
+        "num_examples": 4903859,
+        "dataset_name": "json"
+      }
+    },
+    "download_checksums": {},
+    "download_size": 1443213786,
+    "dataset_size": 1438309927,
+    "post_processing_size": 0,
+    "features": {
+      "instruction": {
+        "dtype": "string",
+        "id": null,
+        "_type": "Value"
+      },
+      "input": {
+        "dtype": "string",
+        "id": null,
+        "_type": "Value"
+      },
+      "output": {
+        "dtype": "string",
+        "id": null,
+        "_type": "Value"
+      }
+    },
+    "supervised_keys": null,
+    "config_description": "Auto-generated configuration with normalized splits."
+  }
+}

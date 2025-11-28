@@ -1,0 +1,90 @@
+{
+  "default": {
+    "builder_name": "json",
+    "config_name": "default",
+    "version": {
+      "version_str": "1.0.0",
+      "major": 1,
+      "minor": 0,
+      "patch": 0
+    },
+    "description": "Normalized Pashto instruction-style data with unified instruction/input/output columns.",
+    "citation": "",
+    "homepage": "https://huggingface.co/tasal9",
+    "license": "apache-2.0",
+    "task_templates": null,
+    "splits": {
+      "business_automation_dataset": {
+        "name": "business_automation_dataset",
+        "num_bytes": 1801,
+        "num_examples": 4,
+        "dataset_name": "json"
+      },
+      "cultural_content_dataset": {
+        "name": "cultural_content_dataset",
+        "num_bytes": 1693,
+        "num_examples": 4,
+        "dataset_name": "json"
+      },
+      "general_qa_dataset": {
+        "name": "general_qa_dataset",
+        "num_bytes": 1338,
+        "num_examples": 3,
+        "dataset_name": "json"
+      },
+      "islamic_content_dataset": {
+        "name": "islamic_content_dataset",
+        "num_bytes": 1622,
+        "num_examples": 3,
+        "dataset_name": "json"
+      },
+      "language_learning_dataset": {
+        "name": "language_learning_dataset",
+        "num_bytes": 1304,
+        "num_examples": 5,
+        "dataset_name": "json"
+      },
+      "news_summarization_dataset": {
+        "name": "news_summarization_dataset",
+        "num_bytes": 166804,
+        "num_examples": 72,
+        "dataset_name": "json"
+      },
+      "tutor_chat_dataset": {
+        "name": "tutor_chat_dataset",
+        "num_bytes": 32590,
+        "num_examples": 46,
+        "dataset_name": "json"
+      },
+      "zamai_training_dataset": {
+        "name": "zamai_training_dataset",
+        "num_bytes": 207152,
+        "num_examples": 137,
+        "dataset_name": "json"
+      }
+    },
+    "download_checksums": {},
+    "download_size": 414578,
+    "dataset_size": 414304,
+    "post_processing_size": 0,
+    "features": {
+      "instruction": {
+        "dtype": "string",
+        "id": null,
+        "_type": "Value"
+      },
+      "input": {
+        "dtype": "string",
+        "id": null,
+        "_type": "Value"
+      },
+      "output": {
+        "dtype": "string",
+        "id": null,
+        "_type": "Value"
+      }
+    },
+    "supervised_keys": null,
+    "config_description": "Auto-generated configuration with normalized splits."
+  }
+}

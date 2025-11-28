@@ -1,0 +1,66 @@
+{
+  "default": {
+    "builder_name": "json",
+    "config_name": "default",
+    "version": {
+      "version_str": "1.0.0",
+      "major": 1,
+      "minor": 0,
+      "patch": 0
+    },
+    "description": "Normalized Pashto instruction-style data with unified instruction/input/output columns.",
+    "citation": "",
+    "homepage": "https://huggingface.co/tasal9",
+    "license": "apache-2.0",
+    "task_templates": null,
+    "splits": {
+      "pashto_train_instruction": {
+        "name": "pashto_train_instruction",
+        "num_bytes": 90937687,
+        "num_examples": 25785,
+        "dataset_name": "json"
+      },
+      "pashto_train_prompt_completion": {
+        "name": "pashto_train_prompt_completion",
+        "num_bytes": 91633882,
+        "num_examples": 25785,
+        "dataset_name": "json"
+      },
+      "pashto_val_instruction": {
+        "name": "pashto_val_instruction",
+        "num_bytes": 9917276,
+        "num_examples": 2865,
+        "dataset_name": "json"
+      },
+      "pashto_val_prompt_completion": {
+        "name": "pashto_val_prompt_completion",
+        "num_bytes": 9994631,
+        "num_examples": 2865,
+        "dataset_name": "json"
+      }
+    },
+    "download_checksums": {},
+    "download_size": 202540776,
+    "dataset_size": 202483476,
+    "post_processing_size": 0,
+    "features": {
+      "instruction": {
+        "dtype": "string",
+        "id": null,
+        "_type": "Value"
+      },
+      "input": {
+        "dtype": "string",
+        "id": null,
+        "_type": "Value"
+      },
+      "output": {
+        "dtype": "string",
+        "id": null,
+        "_type": "Value"
+      }
+    },
+    "supervised_keys": null,
+    "config_description": "Auto-generated configuration with normalized splits."
+  }
+}
