@@ -1,7 +1,7 @@
 ---
 title: ZamAI mT5-Pashto Training
 emoji: 🌐
-colorFrom: teal
+colorFrom: blue
 colorTo: purple
 sdk: gradio
 sdk_version: 4.44.0
