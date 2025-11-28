@@ -32,7 +32,6 @@ def _device() -> str:
     return "cuda" if torch.cuda.is_available() else "cpu"
 
 
-@spaces.GPU
 def load_model() -> Tuple[AutoModelForSeq2SeqLM, PreTrainedTokenizerBase]:
     """Lazy-load the translation model for inference."""
 
@@ -78,7 +77,9 @@ def translate_text(text: str, direction: str) -> str:
     if not text:
         return "Please provide text to translate."
 
-    model, translation_tokenizer = load_model()
+    model, translation_tokenizer = cast(
+        Tuple[AutoModelForSeq2SeqLM, PreTrainedTokenizerBase], load_model()
+    )
     inputs = translation_tokenizer(
         _direction_prefix(direction) + text,
         return_tensors="pt",
