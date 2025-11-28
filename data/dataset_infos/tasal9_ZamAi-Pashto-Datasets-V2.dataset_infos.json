@@ -1,0 +1,54 @@
+{
+  "default": {
+    "builder_name": "json",
+    "config_name": "default",
+    "version": {
+      "version_str": "1.0.0",
+      "major": 1,
+      "minor": 0,
+      "patch": 0
+    },
+    "description": "Normalized Pashto instruction dataset with instruction/input/output schema.",
+    "citation": "",
+    "homepage": "https://huggingface.co/tasal9",
+    "license": "apache-2.0",
+    "task_templates": null,
+    "splits": {
+      "train": {
+        "name": "train",
+        "num_bytes": 91969087,
+        "num_examples": 25785,
+        "dataset_name": "json"
+      },
+      "validation": {
+        "name": "validation",
+        "num_bytes": 10031876,
+        "num_examples": 2865,
+        "dataset_name": "json"
+      }
+    },
+    "download_checksums": {},
+    "download_size": 102000963,
+    "dataset_size": 102000963,
+    "post_processing_size": 0,
+    "features": {
+      "instruction": {
+        "dtype": "string",
+        "id": null,
+        "_type": "Value"
+      },
+      "input": {
+        "dtype": "string",
+        "id": null,
+        "_type": "Value"
+      },
+      "output": {
+        "dtype": "string",
+        "id": null,
+        "_type": "Value"
+      }
+    },
+    "supervised_keys": null,
+    "config_description": "Default configuration with train/validation splits."
+  }
+}
