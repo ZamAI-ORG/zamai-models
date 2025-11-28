@@ -4,8 +4,6 @@ Manual ZeroGPU Training Space Setup for ZamAI Models
 Creates ready-to-upload files for HuggingFace Spaces
 """
 
-import os
-import json
 from pathlib import Path
 
 def create_training_app_files():
