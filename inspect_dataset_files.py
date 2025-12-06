@@ -1,8 +1,8 @@
-
 from huggingface_hub import hf_hub_download
 import pandas as pd
 import json
 import os
+from datasets import load_dataset
 
 dataset_name = "tasal9/ZamAI_Pashto_Dataset"
 files_to_check = [
@@ -56,3 +56,12 @@ for filename in files_to_check:
             
     except Exception as e:
         print(f"❌ Error inspecting {filename}: {e}")
+
+# Load only instruction data
+ds_instruct = load_dataset("tasal9/ZamAI_Pashto_Dataset", data_files="pashto_train_instruction.jsonl")
+
+# Load only prompt/completion data
+ds_prompt = load_dataset("tasal9/ZamAI_Pashto_Dataset", data_files="pashto_train_prompt_completion.jsonl")
+
+# Load CSV data
+ds_csv = load_dataset("csv", data_files="https://huggingface.co/datasets/tasal9/ZamAI_Pashto_Dataset/resolve/main/pashto_cleaned_train.csv")
