@@ -166,18 +166,13 @@ ZamAI:"""
 assistant = ZamAIVoiceAssistant()
 
 # Create Enhanced Gradio interface
-custom_css = """
-.header-text {text-align: center; color: #2563eb;}
-.stat-box {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px; border-radius: 10px; color: white;}
-"""
-
 with gr.Blocks(title="🇦🇫 ZamAI Pro Voice Assistant") as demo:
     gr.Markdown("""
     # 🇦🇫 ZamAI Pro Voice Assistant
     ### *د افغانستان AI مرستیال - Afghanistan's Advanced AI Assistant*
     
     **Powered by:** Whisper Large v3 • Mistral 7B • Hugging Face Inference
-    """, elem_classes="header-text")
+    """)
     
     with gr.Tab("💬 Smart Chat"):
         gr.Markdown("### 🤖 Intelligent Conversation with Advanced Controls")
@@ -203,7 +198,7 @@ with gr.Blocks(title="🇦🇫 ZamAI Pro Voice Assistant") as demo:
                         clear_btn = gr.Button("🗑️ Clear", size="lg")
             
             with gr.Column(scale=1):
-                stats_box = gr.Markdown(assistant.get_stats(), elem_classes="stat-box")
+                stats_box = gr.Markdown(assistant.get_stats())
                 
                 gr.Markdown("### ⚙️ Generation Settings")
                 temperature = gr.Slider(
