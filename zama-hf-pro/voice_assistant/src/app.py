@@ -171,7 +171,7 @@ custom_css = """
 .stat-box {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 15px; border-radius: 10px; color: white;}
 """
 
-with gr.Blocks(title="🇦🇫 ZamAI Pro Voice Assistant", theme=gr.themes.Soft(), css=custom_css) as demo:
+with gr.Blocks(title="🇦🇫 ZamAI Pro Voice Assistant") as demo:
     gr.Markdown("""
     # 🇦🇫 ZamAI Pro Voice Assistant
     ### *د افغانستان AI مرستیال - Afghanistan's Advanced AI Assistant*
@@ -187,9 +187,8 @@ with gr.Blocks(title="🇦🇫 ZamAI Pro Voice Assistant", theme=gr.themes.Soft(
                 chatbot = gr.Chatbot(
                     label="ZamAI Conversation", 
                     height=500, 
-                    type='messages',
-                    avatar_images=(None, "🤖"),
-                    show_copy_button=True
+                    avatar_images=(None, "https://raw.githubusercontent.com/gradio-app/gradio/main/gradio/icons/robot.svg"),
+                    buttons=["copy_all"]
                 )
                 
                 with gr.Row():
@@ -253,8 +252,7 @@ with gr.Blocks(title="🇦🇫 ZamAI Pro Voice Assistant", theme=gr.themes.Soft(
                 audio_input = gr.Audio(
                     sources=["microphone"], 
                     type="filepath", 
-                    label="🎤 Record your voice",
-                    show_download_button=True
+                    label="🎤 Record your voice"
                 )
                 process_btn = gr.Button("🔄 Process Audio", variant="primary", size="lg")
                 gr.Markdown("**Tip:** Speak clearly and wait for the model to process your audio.")
@@ -263,8 +261,7 @@ with gr.Blocks(title="🇦🇫 ZamAI Pro Voice Assistant", theme=gr.themes.Soft(
                 text_output = gr.Textbox(
                     label="📝 Transcribed Text & AI Response", 
                     lines=8,
-                    placeholder="Your speech will be transcribed and AI will respond here...",
-                    show_copy_button=True
+                    placeholder="Your speech will be transcribed and AI will respond here..."
                 )
                 audio_output = gr.Audio(label="🔊 Voice Response (if available)")
         
