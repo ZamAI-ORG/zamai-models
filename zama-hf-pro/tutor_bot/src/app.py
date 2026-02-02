@@ -32,7 +32,7 @@ class ZamAITutorBot:
 tutor = ZamAITutorBot()
 
 # Gradio interface
-with gr.Blocks(title="🇦🇫 ZamAI Tutor Bot", theme=gr.themes.Soft()) as demo:
+with gr.Blocks(title="🇦🇫 ZamAI Tutor Bot") as demo:
     gr.Markdown("# 🇦🇫 ZamAI Educational Tutor Bot")
     gr.Markdown("Ask questions in Pashto and get educational responses")
     
