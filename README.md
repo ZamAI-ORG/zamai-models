@@ -14,6 +14,14 @@ Model artifacts and experiments published by ZamAI Labs (training results, refer
 - Labs: https://github.com/ZamAI-ORG
 
 
+# ZamAI Models
+
+Model artifacts and experiments published by ZamAI Labs (training results, references, and supporting code where applicable).
+
+- Website: https://zamai.dev
+- Labs: https://github.com/ZamAI-ORG
+
+
 # 🇦🇫 ZamAI Pro Models - Complete Deployment
 
 **Afghanistan's Premier AI Ecosystem - Now Production Ready!**
